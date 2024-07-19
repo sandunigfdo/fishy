@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\OrganizationController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Middleware\EnsureAdmin;
 use Illuminate\Support\Facades\Route;
@@ -21,6 +22,7 @@ Route::middleware('auth')->group(function () {
 
 Route::middleware('auth',EnsureAdmin::class)->group(function () {
     Route::get('register', [RegisteredUserController::class, 'create'])->name('register');
+    Route::resource('organizations', OrganizationController::class)->only(['index', 'store']);
 });
 
 
