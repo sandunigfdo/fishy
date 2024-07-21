@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Organization;
+use App\Models\Role;
 use App\Models\User;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -20,7 +21,10 @@ class OrganizationController extends Controller
      */
     public function index(): View
     {
-        return view('organizations.index');
+        return view('organizations.index',[
+            'roles' => Role::all(),
+        ]);
+
     }
 
     /**
@@ -36,27 +40,29 @@ class OrganizationController extends Controller
      */
     public function store(Request $request): RedirectResponse
     {
+//        dd($request->all());
+
         // Validate incoming request data
         $validated = $request->validate([
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255',
             'password' => 'required|string|min:8',
-            'role_id' => 'required|integer',
+            'role' => 'required',
             'o_name' => 'required|string|max:255',
 
         ]);
         $user = $this->createUser($validated);
 
-        if ($validated['role_id'] != 1) {
+        if ($validated['role'] != 1) {
             // If the role is user
             // Store organization data in the organizations table
             $this->createOrganization($validated,$user->id);
 
 
-            return redirect(route('organizations.index'));
+            return redirect(route('dashboard'));
         } else{
             // If the role is admin Store data in the Users table
-            return redirect(route('organizations.index'));
+            return redirect(route('dashboard'));
         }
     }
     private function createUser(array $validated): User
@@ -66,7 +72,7 @@ class OrganizationController extends Controller
         $user->name = $validated['name'];
         $user->email = $validated['email'];
         $user->password = Hash::make($validated['password']);
-        $user->role_id = $validated['role_id'];
+        $user->role_id = $validated['role'];
         $user->save();
 
         // Return the created User
