@@ -43,7 +43,7 @@ class OrganizationController extends Controller
             'password' => 'required|string|min:8',
             'role_id' => 'required|integer',
             'o_name' => 'required|string|max:255',
-            'o_email' => 'required|string|email|max:255',
+
         ]);
         $user = $this->createUser($validated);
 
@@ -78,7 +78,7 @@ class OrganizationController extends Controller
         // Create a new Organization
         $organization = new Organization();
         $organization->o_name = $validated['o_name'];
-        $organization->o_email = $validated['o_email'];
+        $organization->o_email = $validated['email'];
         $organization->user_id = $user_id;
         $organization->save();
 
