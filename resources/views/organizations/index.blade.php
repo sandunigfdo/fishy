@@ -55,10 +55,27 @@
 
                                 <div>
                                 <label for="role_id" class="block text-sm font-medium leading-6 text-gray-900">Role</label>
-                                <div class="mt-2">
-                                    <input id="role_id" name="role_id" type="number"  required
-                                           class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
-                                </div>
+{{--                                <div class="mt-2">--}}
+{{--                                    <input id="role_id" name="role_id" type="number"  required--}}
+{{--                                           class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">--}}
+{{--                                </div>--}}
+
+                                <!-- Role dropdown-->
+                                 <div>
+{{--                                    <label for="role" class="block text-sm font-medium leading-6 text-gray-900"></label>--}}
+                                    <div class="mt-2">
+                                        <select id="role" name="role"
+                                                class="border border-gray-300 text-gray-900 rounded-lg focus:ring-indigo-500 focus:border-indigo-500 block w-full p-2.5 dark:bg-gray-900 dark:border-gray-700 dark:placeholder-gray-400 dark:text-gray-300 dark:focus:ring-indigo-600 dark:focus:border-indigo-600 mt-1">
+                                            <option selected>Select role</option>
+                                            @foreach($roles as $role)
+                                                <option value="{{ $role->id }}">{{ ucfirst($role->name) }}</option>
+                                            @endforeach
+                                        </select>
+{{--                                        <x-custom-input-error :messages="$errors->get('role')" class="mt-2"/>--}}
+                                    </div>
+                                 </div>
+
+                                <!-- Role dropdown-->
                             </div>
 
 
