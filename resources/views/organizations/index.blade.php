@@ -13,7 +13,7 @@
                         <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
                             <form class="space-y-6" action="{{ route('organizations.store') }}" method="POST">
                                 @csrf
-
+                                <!-- Name -->
                                 <div>
                                     <label for="name" class="block text-sm font-medium leading-6 text-gray-900">Name</label>
                                     <div class="mt-2">
@@ -21,6 +21,8 @@
                                                class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
                                     </div>
                                 </div>
+                                <!-- Name -->
+                                <!-- Organization -->
                                 <div>
                                     <label for="o_name" class="block text-sm font-medium leading-6 text-gray-900">Organization</label>
                                     <div class="mt-2">
@@ -28,7 +30,8 @@
                                                class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
                                     </div>
                                 </div>
-
+                                <!-- Organization -->
+                                <!-- Email -->
                                 <div>
                                     <label for="email" class="block text-sm font-medium leading-6 text-gray-900">Email
                                         address</label>
@@ -37,7 +40,8 @@
                                                class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
                                     </div>
                                 </div>
-
+                                <!-- Email -->
+                                <!-- Password -->
                                 <div>
                                     <div class="flex items-center justify-between">
                                         <label for="password"
@@ -52,17 +56,10 @@
                                                class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
                                     </div>
                                 </div>
-
+                                <!-- Password -->
+                                <!-- Role dropdown -->
                                 <div>
-                                <label for="role_id" class="block text-sm font-medium leading-6 text-gray-900">Role</label>
-{{--                                <div class="mt-2">--}}
-{{--                                    <input id="role_id" name="role_id" type="number"  required--}}
-{{--                                           class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">--}}
-{{--                                </div>--}}
-
-                                <!-- Role dropdown-->
-                                 <div>
-{{--                                    <label for="role" class="block text-sm font-medium leading-6 text-gray-900"></label>--}}
+                                    <label for="role_id" class="block text-sm font-medium leading-6 text-gray-900">Role</label>
                                     <div class="mt-2">
                                         <select id="role" name="role"
                                                 class="border border-gray-300 text-gray-900 rounded-lg focus:ring-indigo-500 focus:border-indigo-500 block w-full p-2.5 dark:bg-gray-900 dark:border-gray-700 dark:placeholder-gray-400 dark:text-gray-300 dark:focus:ring-indigo-600 dark:focus:border-indigo-600 mt-1">
@@ -71,30 +68,18 @@
                                                 <option value="{{ $role->id }}">{{ ucfirst($role->name) }}</option>
                                             @endforeach
                                         </select>
-{{--                                        <x-custom-input-error :messages="$errors->get('role')" class="mt-2"/>--}}
                                     </div>
-                                 </div>
-
+                                </div>
                                 <!-- Role dropdown-->
-                            </div>
-
-
-                                <div>
+                                <div class="pt-4 pb-2">
                                     <button type="submit"
                                             class="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
                                         Register
                                     </button>
                                 </div>
                             </form>
-
-                            {{--                            <p class="mt-10 text-center text-sm text-gray-500"> Not a member?--}}
-                            {{--                                <a href="#"--}}
-                            {{--                                   class="font-semibold leading-6 text-indigo-600 hover:text-indigo-500">Start a 14 day free trial</a>--}}
-                            {{--                            </p>--}}
                         </div>
                     <!-- Register organization Form -->
-
-
                 </div>
             </div>
         </div>
