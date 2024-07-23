@@ -20,8 +20,8 @@ class Organization extends Model
     /**
      * Relationship associated with the organization
      */
-    public function organizations():HasOne
+    public function user():HasOne
     {
-        return $this->hasOne(Organization::class);
+        return $this->hasOne(User::class);
     }
 }
