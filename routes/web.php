@@ -27,5 +27,10 @@ Route::middleware('auth', EnsureAdmin::class)->group(function () {
     Route::resource('organizations', OrganizationController::class)->only(['index', 'store', 'edit', 'update', 'destroy']);
 });
 
+Route::middleware('auth')->group(function () {
+    Route::get('/userdashboard', [UserDashboardController::class, 'index'])->name('userdashboard');
+
+});
+
 
 require __DIR__.'/auth.php';
