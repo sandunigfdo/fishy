@@ -42,11 +42,13 @@ class OrganizationController extends Controller
     {
         // dd($request->all());
         // Validate incoming request data
+        $roles = Role::all()->modelKeys();
+
         $validated = $request->validate([
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255',
             'password' => 'required|string|min:8',
-            'role' => 'required',
+            'role' => 'required', Rule::in($roles),
             'o_name' => 'required|string|max:255',
 
         ]);
