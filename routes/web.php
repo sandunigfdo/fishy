@@ -21,7 +21,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::middleware('auth',EnsureAdmin::class)->group(function () {
+Route::middleware('auth', EnsureAdmin::class)->group(function () {
     Route::get('register', [RegisteredUserController::class, 'create'])->name('register');
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
     Route::resource('organizations', OrganizationController::class)->only(['index', 'store', 'edit', 'update', 'destroy']);
