@@ -49,7 +49,7 @@ class User extends Authenticatable
     /**
      * Relationship associated with the organization
      */
-    public function organizations():HasOne
+    public function organization():HasOne
     {
         return $this->hasOne(Organization::class);
     }
