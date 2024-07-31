@@ -74,9 +74,13 @@ class UserController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Organization $organization)
+    public function edit(User $user): View
     {
-        //
+//        Gate::authorize('update', $user);
+        return view('admin.edit',[
+            'user' => $user,
+            'roles' => Role::all(),
+        ]);
     }
 
     /**
