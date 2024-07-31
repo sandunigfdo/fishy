@@ -21,7 +21,7 @@ class OrganizationController extends Controller
      */
     public function index(): View
     {
-        return view('organizations.index',[
+        return view('admin.index',[
             'roles' => Role::all(),
         ]);
     //  Add pagination to increase performance
