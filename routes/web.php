@@ -1,8 +1,10 @@
 <?php
 
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\OrganizationController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\UserDashboardController;
 use App\Http\Middleware\EnsureAdmin;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\RegisteredUserController;
@@ -34,6 +36,7 @@ Route::middleware('auth', EnsureAdmin::class)->group(function () {
 
 Route::middleware('auth')->group(function () {
     Route::get('/userdashboard', [UserDashboardController::class, 'index'])->name('userdashboard');
+    Route::resource('employees', EmployeeController::class)->only(['index', 'store', 'edit', 'update', 'destroy']);
 
 });
 
