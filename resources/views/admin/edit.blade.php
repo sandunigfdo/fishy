@@ -28,7 +28,7 @@
                                 <!-- Name -->
                                 <!-- Organization -->
                                 <div>
-                                    <label for="o_name" class="block text-sm font-medium leading-6 text-gray-900">Organization</label>
+                                    <label for="organization" class="block text-sm font-medium leading-6 text-gray-900">Organization</label>
                                     <div class="mt-2">
                                         <input id="organization"
                                                name="organization"
