@@ -71,12 +71,21 @@
                                     </div>
                                 </div>
                                 <!-- Role dropdown-->
-                                <div class="pt-4 pb-2">
-                                    <button type="submit"
-                                            class="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
-                                        Register
-                                    </button>
-                                </div>
+                               <div class="pt-6">
+                                   <div class="border-t border-gray-900/10 pb-12">
+                                    <div class="mt-6 flex items-center justify-end gap-x-6">
+                                        <a href="{{ route('userdashboard') }}"
+                                                class="text-sm font-semibold leading-6 text-gray-900">
+                                                Cancel
+                                        </a>
+                                        <button type="submit"
+                                                class="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
+                                                Save
+                                        </button>
+                                    </div>
+                               </div>
+                               </div>
+
                             </form>
                         </div>
                     <!-- Register organization Form -->
