@@ -86,9 +86,27 @@ class UserController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Organization $organization)
+    public function update(Request $request, User $user): RedirectResponse
     {
-        //
+//        Gate::authorize('update', $user);
+        $roles = Role::all()->modelKeys();
+
+        $validated = $request->validate([
+            'name' => 'required|string|max:255',
+            'organization' => 'required|string|max:255',
+            'email' => 'required|string|email|max:255',
+            'role' => 'required', Rule::in($roles),
+
+        ]);
+
+        // Update user information
+        $user->name = $validated['name'];
+        $user->organization = $validated['organization'];
+        $user->email = $validated['email'];
+        $user->role_id = $validated['role'];
+        $user->save();
+
+        return redirect(route('dashboard'));
     }
 
     /**
