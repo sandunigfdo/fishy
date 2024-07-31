@@ -6,12 +6,12 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-10">
                     <div class="px-4 sm:px-6 lg:px-8">
-                        <h1 class="text-center text-lg font-semibold leading-6 tracking-tight text-gray-900">Add new Customer</h1>
+                        <h1 class="text-center text-lg font-semibold leading-6 tracking-tight text-gray-900">Edit Customer</h1>
                     </div>
 
-                    <!-- Register organization Form -->
+                    <!-- Edit customer Form -->
                         <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-                            <form class="space-y-6" action="{{ route('organizations.update', $organization) }}" method="POST">
+                            <form class="space-y-6" action="{{ route('users.update', $user) }}" method="POST">
                                 @csrf
                                 @method('patch')
                                 <!-- Name -->
@@ -30,10 +30,10 @@
                                 <div>
                                     <label for="o_name" class="block text-sm font-medium leading-6 text-gray-900">Organization</label>
                                     <div class="mt-2">
-                                        <input id="o_name"
-                                               name="o_name"
+                                        <input id="organization"
+                                               name="organization"
                                                type="text" required
-                                               value="{{ old('o_name', $organization->o_name) }}"
+                                               value="{{ old('organization', $user->organization) }}"
                                                class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
                                     </div>
                                 </div>
