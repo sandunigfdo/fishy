@@ -2,8 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Organization;
-use Illuminate\Http\Request;
+use App\Models\User;
 use Illuminate\View\View;
 
 class DashboardController extends Controller
@@ -14,7 +13,7 @@ class DashboardController extends Controller
     public function index(): View
     {
         return view('dashboard',[
-            'organizations' => Organization::all(),
+            'users' => User::all(),
         ]);
 
     }
