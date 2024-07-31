@@ -22,7 +22,7 @@
                                 <p class="mt-2 text-base text-gray-700">A list of all Customers.</p>
                             </div>
                             <div class="mt-4 sm:ml-16 sm:mt-0 sm:flex-none">
-                                <a href="{{ route('organizations.index') }}"
+                                <a href="{{ route('users.index') }}"
                                    class="block rounded-md bg-indigo-600 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
                                     Add Customer
                                 </a>
@@ -49,13 +49,13 @@
                                         </tr>
                                         </thead>
                                         <tbody>
-                                        @foreach($organizations as $organization)
+                                        @foreach($users as $user)
                                             <tr>
                                                 <td class="whitespace-nowrap border-b border-gray-200 py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6 lg:pl-8">
-                                                    {{$organization->o_name}}
+                                                    {{$user->organization}}
                                                 </td>
                                                 <td class="hidden whitespace-nowrap border-b border-gray-200 px-3 py-4 text-sm text-gray-500 lg:table-cell">
-                                                    {{$organization->o_email}}
+                                                    {{$user->email}}
                                                 </td>
                                                 <td class="relative whitespace-nowrap border-b border-gray-200 py-4 pl-3 pr-4 text-center text-sm font-medium sm:pr-8 lg:pr-8">
                                                     <div class="flex space-x-10">
