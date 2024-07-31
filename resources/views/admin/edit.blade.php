@@ -63,7 +63,9 @@
                                                 class="border border-gray-300 text-gray-900 rounded-lg focus:ring-indigo-500 focus:border-indigo-500 block w-full p-2.5 dark:bg-gray-900 dark:border-gray-700 dark:placeholder-gray-400 dark:text-gray-300 dark:focus:ring-indigo-600 dark:focus:border-indigo-600 mt-1">
                                             <option selected>Select role</option>
                                             @foreach($roles as $role)
-                                                <option value="{{ $role->id }}">{{ ucfirst($role->name) }}</option>
+                                                <option value="{{ $role->id }}" {{ $user->role_id == $role->id ? 'selected' : '' }}>
+                                                    {{ ucfirst($role->name) }}
+                                                </option>
                                             @endforeach
                                         </select>
                                     </div>
