@@ -13,8 +13,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\View\View;
 use PhpParser\Node\Stmt\Return_;
 
-
-class OrganizationController extends Controller
+class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -40,7 +39,6 @@ class OrganizationController extends Controller
      */
     public function store(Request $request): RedirectResponse
     {
-        // dd($request->all());
         // Validate incoming request data
         $roles = Role::all()->modelKeys();
 
@@ -49,7 +47,7 @@ class OrganizationController extends Controller
             'email' => 'required|string|email|max:255',
             'password' => 'required|string|min:8',
             'role' => 'required', Rule::in($roles),
-            'o_name' => 'required|string|max:255',
+            'organization' => 'required|string|max:255',
 
         ]);
 
@@ -59,18 +57,9 @@ class OrganizationController extends Controller
         $user->email = $validated['email'];
         $user->password = Hash::make($validated['password']);
         $user->role_id = $validated['role'];
+        $user->organization = $validated['organization'];
         $user->save();
 
-        if ($validated['role'] != 1) {
-            // If the role is user
-            // Store organization data in the organizations table
-            $organization = new Organization();
-            $organization->o_name = $validated['o_name'];
-            $organization->o_email = $validated['email'];
-            $organization->user_id = $user->id;
-            $organization->save();
-
-        }
         return redirect(route('dashboard'));
     }
 
