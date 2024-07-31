@@ -2,7 +2,7 @@
 
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\EmployeeController;
-use App\Http\Controllers\OrganizationController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UserDashboardController;
 use App\Http\Middleware\EnsureAdmin;
@@ -31,7 +31,7 @@ Route::middleware('auth')->group(function () {
 Route::middleware('auth', EnsureAdmin::class)->group(function () {
     Route::get('register', [RegisteredUserController::class, 'create'])->name('register');
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
-    Route::resource('organizations', OrganizationController::class)->only(['index', 'store', 'edit', 'update', 'destroy']);
+    Route::resource('/users', UserController::class)->only(['index', 'store', 'edit', 'update', 'destroy']);
 });
 
 Route::middleware('auth')->group(function () {
