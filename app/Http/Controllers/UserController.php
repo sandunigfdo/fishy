@@ -112,8 +112,10 @@ class UserController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Organization $organization)
+    public function destroy(User $user): RedirectResponse
     {
-        //
+//        Gate::authorize('delete', $user);
+        $user->delete();
+        return redirect(route('dashboard'));
     }
 }
