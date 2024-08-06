@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\EmployeeController;
+use App\Http\Controllers\EmployeeManagementController;
+use App\Http\Controllers\GroupController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UserDashboardController;
@@ -37,7 +39,10 @@ Route::middleware('auth', EnsureAdmin::class)->group(function () {
 Route::middleware('auth')->group(function () {
     Route::get('/userdashboard', [UserDashboardController::class, 'index'])->name('userdashboard');
     Route::resource('employees', EmployeeController::class)->only(['index', 'store', 'edit', 'update', 'destroy']);
-
+    Route::get('/employee_management', [EmployeeManagementController::class, 'index'])->name('employee_management');
+    Route::get('/groups', [EmployeeManagementController::class, 'index'])->name('employee_management');
+    Route::get('/groups/create', [GroupController::class, 'create'])->name('groups.create');
+    Route::post('/groups', [GroupController::class, 'store'])->name('groups.store');
 });
 
 
