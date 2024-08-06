@@ -18,12 +18,25 @@
                         {{ __('Dashboard') }}
                     </x-nav-link>
                 </div>
-                <!-- Add Employee -->
+                <!-- Employee Management -->
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link :href="route('employees.index')" :active="request()->routeIs('employees.index')">
-                        {{ __('Employees') }}
+                    <x-nav-link :href="route('employee_management')" :active="request()->routeIs('employees.index')">
+                        {{ __('Employee Management') }}
                     </x-nav-link>
                 </div>
+                <!-- Campaign Management -->
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <x-nav-link :href="route('employees.index')" :active="request()->routeIs('employees.index')">
+                        {{ __('Campaign Management') }}
+                    </x-nav-link>
+                </div>
+                <!-- View Analytics -->
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <x-nav-link :href="route('employees.index')" :active="request()->routeIs('employees.index')">
+                        {{ __('View Analytics') }}
+                    </x-nav-link>
+                </div>
+
 
 
             </div>
