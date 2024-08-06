@@ -48,13 +48,6 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
-    /**
-     * Relationship associated with the organization
-     */
-    public function organization():HasOne
-    {
-        return $this->hasOne(Organization::class);
-    }
 
     public function emploees():HasMany{
         return $this->hasMany(Employee::class);
