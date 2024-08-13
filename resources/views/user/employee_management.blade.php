@@ -236,7 +236,7 @@
                                                 <input type="text"
                                                        name="name"
                                                        id="name"
-                                                       placeholder="Group name"
+                                                       placeholder="Create a New Group"
                                                        autocomplete="name"
                                                        class="block border-0 focus:ring-2 focus:ring-indigo-600 focus:ring-inset mb-6 placeholder:text-gray-400 py-1.5 ring-1 ring-gray-300 ring-inset rounded-md shadow-sm sm:leading-6 sm:text-sm text-gray-900 w-full">
                                             </div>
