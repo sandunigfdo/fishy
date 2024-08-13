@@ -4,7 +4,7 @@
 
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-10">
-                    <!-- Employee Management table -->
+                    <!-- Employee Management Container -->
                     <div class="px-4 sm:px-6 lg:px-8">
                         <div class="sm:flex sm:items-center">
                             <div class="sm:flex-auto">
@@ -21,7 +21,8 @@
                         <div class="mt-8 flow-root">
                             <div class="-mx-4 -my-2 sm:-mx-6 lg:-mx-8">
                                 <div class="inline-block min-w-full py-2 align-middle">
-                                    <table class="min-w-full border-separate border-spacing-0">
+                                    <!-- Employee Management Table -->
+                                        <table class="min-w-full border-separate border-spacing-0">
                                         <thead>
                                         <tr>
                                             <th scope="col"
@@ -87,12 +88,13 @@
 
                                         </tbody>
                                     </table>
+                                    <!-- Employee Management Table -->
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Employee Management Table -->
+                    <!-- Employee Management Container -->
 
                 </div>
             </div>
@@ -140,7 +142,7 @@
                                                     Add Group
                                                 </button>
                                             </div>
-                                         </div>
+                                        </div>
                                     </form>
 
                                 <!--  -->
@@ -200,8 +202,6 @@
             </div>
         </div>
     </div>
-
-
-
+    <!-- -->
 
 </x-user_app-layout>
