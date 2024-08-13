@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Employee;
+use App\Models\Group;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -17,8 +18,11 @@ class EmployeeController extends Controller
      */
     public function index(): View
     {
+        $employees = Employee::with('group')->get();
+
         return view('employees.index',[
             'employees' => Employee::all(),
+            'groups' => Group::all(),
         ]);
     }
 
