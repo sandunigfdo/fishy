@@ -36,6 +36,7 @@ class GroupController extends Controller
     {
         $validated = $request->validate([
             'name' => 'required|unique:groups|max:255',
+            'user_id' => 'nullable',
         ]);
 
         // Create a new Group
