@@ -238,9 +238,9 @@
                                                        id="name"
                                                        placeholder="Create a New Group"
                                                        autocomplete="name"
-                                                       class="block border-0 focus:ring-2 focus:ring-indigo-600 focus:ring-inset mb-6 placeholder:text-gray-400 py-1.5 ring-1 ring-gray-300 ring-inset rounded-md shadow-sm sm:leading-6 sm:text-sm text-gray-900 w-full">
+                                                       class="block border-0 focus:ring-2 focus:ring-indigo-600 focus:ring-inset placeholder:text-gray-400 py-1.5 ring-1 ring-gray-300 ring-inset rounded-md shadow-sm sm:leading-6 sm:text-sm text-gray-900 w-full">
                                             </div>
-                                            <div class="sm:col-span-3">
+                                            <div class="mt-4 sm:ml-16 sm:mt-0 sm:flex-none">
                                                 <button type="submit"
                                                         class="block rounded-md bg-indigo-600 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
                                                     Add Group
