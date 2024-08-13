@@ -292,12 +292,14 @@
                                                 </tr>
                                             @endforeach
 
-                                    </tbody>
-                                </table>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                <!-- Group Table -->
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <!--  -->
                 </div>
             </div>
         </div>
