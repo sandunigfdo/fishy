@@ -110,7 +110,80 @@
         </div>
     </div>
 
-    <!-- Employee Group -->
+    <!-- Employee Group Management -->
+    <div class="">
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+                <div class="p-10">
+                    <div class="px-4 sm:px-6 lg:px-8">
+                        <div class="sm:flex sm:items-center">
+                            <div class="sm:flex-auto">
+                                <h1 class="text-lg font-semibold leading-6 text-gray-900">Assign Groups</h1>
+                                <p class="mt-2 text-base text-gray-700">Select employees and assign them to groups</p>
+                            </div>
+                        </div>
+                        <!-- Container -->
+                        <div class="mt-4 flow-root">
+                            <div class="-mx-4 -my-2 sm:-mx-6 lg:-mx-8">
+                                <div class="inline-block min-w-full py-2 align-middle">
+                                    <!-- Multi Select -->
+                                    <div class="bg-white shadow-sm sm:rounded-xl md:col-span-2">
+                                        <form method="POST" action="{{ route('employee_groups.store') }}">
+                                        @csrf
+                                        <div class="px-4 sm:px-6 lg:px-8 py-6">
+                                            <div class="max-w-2xl space-y-10">
+                                                <fieldset>
+                                                    <legend class="text-sm font-semibold leading-6 text-gray-900">
+                                                        Employees
+                                                    </legend>
+                                                    <p class="mt-1 text-sm leading-6 text-gray-600">
+                                                        Select Employees to add.
+                                                    </p>
+                                                    <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 ">
+                                                        @foreach($employees as $employee)
+                                                            <div class="relative flex gap-x-3 mb-4">
+                                                                <div class="flex h-6 items-center">
+                                                                    <input id="employee_{{ $employee->id }}"
+                                                                           name="employee_ids[]"
+                                                                           type="checkbox"
+                                                                           value="{{ $employee->id }}"
+                                                                           class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                                                                </div>
+                                                                <div class="text-sm leading-6">
+                                                                    <label  for="employee_{{ $employee->f_name }}"
+                                                                            class="font-medium text-gray-900">
+                                                                            {{ $employee->f_name }}
+                                                                    </label>
+                                                                    <p class="text-gray-500">
+                                                                        {{ $employee->email }}
+                                                                    </p>
+                                                                </div>
+                                                            </div>
+                                                        @endforeach
+                                                    </div>
+
+                                                </fieldset>
+                                                <fieldset>
+                                                    <legend class="text-sm font-semibold leading-6 text-gray-900">
+                                                        Group
+                                                    </legend>
+                                                    <p class="mt-1 text-sm leading-6 text-gray-600">
+                                                        Select the group.
+                                                    </p>
+                                                    <div class="mt-6 space-y-6">
+                                                       @foreach($groups as $group)
+                                                            <div class="flex items-center gap-x-3">
+                                                                <input id="group_{{$group->id}}"
+                                                                       name="group_id"
+                                                                       type="radio"
+                                                                       value="{{ $group->id }}"
+                                                                       class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                                                                <label  for="group_{{ $group->id }}"
+                                                                        class="block text-sm font-medium leading-6 text-gray-900">
+                                                                    {{$group->name}}
+                                                                </label>
+                                                            </div>
+                                                       @endforeach
 
     <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
         <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
