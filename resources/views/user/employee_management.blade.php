@@ -231,8 +231,8 @@
                                 <!-- Group Form  -->
                                     <form method="POST" action="{{ route('groups.store') }}">
                                         @csrf
-                                        <div class="grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
-                                            <div class="sm:col-span-4">
+                                        <div class="sm:flex sm:items-center px-4 sm:px-6 lg:px-8">
+                                            <div class="sm:flex-auto w-64">
                                                 <input type="text"
                                                        name="name"
                                                        id="name"
