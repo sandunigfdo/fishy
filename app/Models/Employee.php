@@ -17,6 +17,7 @@ class Employee extends Model
         'email',
         'position',
         'department',
+        'url_token',
     ];
     public function user():HasOne{
         return $this->hasOne(User::class);
