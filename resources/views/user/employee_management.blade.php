@@ -74,7 +74,11 @@
                                                     {{$employee->department}}
                                                 </td>
                                                 <td class="whitespace-nowrap border-b border-gray-200 py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6 lg:pl-8">
-                                                    {{$employee->group->name}}
+                                                    @if($employee->group)
+                                                        {{ $employee->group->name }}
+                                                    @else
+                                                        No Group
+                                                    @endif
                                                 </td>
                                                 <td class="relative whitespace-nowrap border-b border-gray-200 py-4 pl-3 pr-4 text-center text-sm font-medium sm:pr-8 lg:pr-8">
                                                     <div class="flex space-x-10">
