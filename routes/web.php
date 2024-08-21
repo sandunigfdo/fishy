@@ -1,10 +1,13 @@
 <?php
 
+use App\Http\Controllers\CanaryTokenController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\EmployeeGroupController;
+use App\Http\Controllers\EmployeeInputHandleController;
 use App\Http\Controllers\EmployeeManagementController;
 use App\Http\Controllers\GroupController;
+use App\Http\Controllers\LandingController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UserDashboardController;
