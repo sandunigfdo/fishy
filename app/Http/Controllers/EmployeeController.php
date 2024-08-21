@@ -4,11 +4,13 @@ namespace App\Http\Controllers;
 
 use App\Models\Employee;
 use App\Models\Group;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Str;
 use Illuminate\View\View;
 
 class EmployeeController extends Controller
@@ -55,10 +57,22 @@ class EmployeeController extends Controller
         $employee->position = $validated['position'];
         $employee->department = $validated['department'];
         $employee->user_id = Auth::user()->id;
+        $employee->url_token = $this->generateToken();
         $employee->save();
 
         return redirect()->route('userdashboard');
 
+    }
+
+    /**
+     * Generate a unique random token.
+     */
+    public function generateToken(){
+        do {
+            $url_token = Str::random(32); //Generate the random token
+        }while(DB::table('employees')->where('url_token', $url_token)->exists()); // Determine if any records exist that match query's constraints
+
+        return $url_token;
     }
 
     /**
