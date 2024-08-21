@@ -11,7 +11,11 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware) {
-        //
+        $middleware->validateCsrfTokens(except: [
+        '/canary/webhook',
+        '/employees/input_handle',
+        '/landing',
+    ]);
     })
     ->withExceptions(function (Exceptions $exceptions) {
         //
