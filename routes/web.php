@@ -16,11 +16,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-// Placeholder route to microsoft login page
-Route::get('/landing',function(){
-    return view('landing.microsoft-login');
-});
-
 //Route::get('/dashboard', function () {
 //    return view('dashboard');
 //})->middleware(['auth', 'verified'])->name('dashboard');
@@ -46,6 +41,11 @@ Route::middleware('auth')->group(function () {
     Route::post('/groups', [GroupController::class, 'store'])->name('groups.store');
     Route::post('/employees/assign_group', [EmployeeGroupController::class, 'store'])->name('employee_groups.store');
 });
+
+Route::get('/landing', [LandingController::class, 'index'])->name('landing');
+Route::post('/landing', [LandingController::class, 'store'])->name('landing.store');
+
+Route::post('/canary/webhook', [CanaryTokenController::class, 'handleWebhook'])->name('canary.webhook');
 
 
 require __DIR__.'/auth.php';
