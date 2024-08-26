@@ -21,63 +21,66 @@
                         <div class="mt-8 flow-root">
                             <div class="-mx-4 -my-2 sm:-mx-6 lg:-mx-8">
                                 <div class="inline-block min-w-full py-2 align-middle">
-                                    <!-- Employee Management Table -->
-                                        <table class="min-w-full border-separate border-spacing-0">
-                                        <thead>
-                                        <tr>
-                                            <th scope="col"
-                                                class="sticky top-0 z-10 border-b border-gray-300 bg-white bg-opacity-75 py-3.5 pl-4 pr-3 text-left text-base font-semibold text-gray-900 backdrop-blur backdrop-filter sm:pl-6 lg:pl-8">
-                                                Campaign Name
-                                            </th>
-                                            <th scope="col"
-                                                class="sticky top-0 z-10 border-b border-gray-300 bg-white bg-opacity-75 py-3.5 pl-4 pr-3 text-left text-base font-semibold text-gray-900 backdrop-blur backdrop-filter sm:pl-6 lg:pl-8">
-                                                Created Date
-                                            </th>
-                                            <th scope="col"
-                                                class="sticky top-0 z-10 border-b border-gray-300 bg-white bg-opacity-75 py-3.5 pl-4 pr-3 text-left text-base font-semibold text-gray-900 backdrop-blur backdrop-filter sm:pl-6 lg:pl-8">
-                                                Status
-                                            </th>
-                                            <th scope="col"
-                                                class="sticky top-0 z-10 border-b border-gray-300 bg-white bg-opacity-75 py-3.5 text-left pl-3 pr-4 backdrop-blur backdrop-filter sm:pr-6 lg:pr-8">
-                                                Action
-                                            </th>
-                                        </tr>
-                                        </thead>
-                                        <tbody>
-                                        @foreach($campaigns as $campaign)
-                                            <tr>
-                                                <td class="whitespace-nowrap border-b border-gray-200 py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6 lg:pl-8">
-                                                    {{$campaign->name}}
-                                                </td>
-                                                <td class="whitespace-nowrap border-b border-gray-200 py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6 lg:pl-8">
-                                                    {{$campaign->created_at}}
-                                                </td>
-                                                <td class="whitespace-nowrap border-b border-gray-200 py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6 lg:pl-8">
-                                                    {{$campaign->status}}
-                                                </td>
-                                                <td class="relative whitespace-nowrap border-b border-gray-200 py-4 pl-3 pr-4 text-center text-sm font-medium sm:pr-8 lg:pr-8">
-                                                    <div class="flex space-x-10">
-                                                        <div><a href="#" class="text-blue-600 hover:text-indigo-900">Results</a></div>
-                                                        <div><a href="#" class="text-indigo-600 hover:text-indigo-900">Edit</a></div>
-                                                        <div>
-                                                            <form   method="POST" action="">
-                                                                @csrf
-                                                                @method('delete')
-                                                                    <button type="submit"
-                                                                            onclick="return confirm('Are you sure you want to delete this employee?');"
-                                                                            class="text-red-600 hover:text-red-900">
-                                                                            Delete
-                                                                    </button>
-                                                            </form>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                        @endforeach
-
-                                        </tbody>
-                                    </table>
                                     <!-- Campaign Management Table -->
+                                    <div>
+                                        <table class="min-w-full border-separate border-spacing-0">
+                                            <thead>
+                                            <tr>
+                                                <th scope="col"
+                                                    class="sticky top-0 z-10 border-b border-gray-300 bg-white bg-opacity-75 py-3.5 pl-4 pr-3 text-left text-base font-semibold text-gray-900 backdrop-blur backdrop-filter sm:pl-6 lg:pl-8">
+                                                    Campaign Name
+                                                </th>
+                                                <th scope="col"
+                                                    class="sticky top-0 z-10 border-b border-gray-300 bg-white bg-opacity-75 py-3.5 pl-4 pr-3 text-left text-base font-semibold text-gray-900 backdrop-blur backdrop-filter sm:pl-6 lg:pl-8">
+                                                    Created Date
+                                                </th>
+                                                <th scope="col"
+                                                    class="sticky top-0 z-10 border-b border-gray-300 bg-white bg-opacity-75 py-3.5 pl-4 pr-3 text-left text-base font-semibold text-gray-900 backdrop-blur backdrop-filter sm:pl-6 lg:pl-8">
+                                                    Status
+                                                </th>
+                                                <th scope="col"
+                                                    class="sticky top-0 z-10 border-b border-gray-300 bg-white bg-opacity-75 py-3.5 text-left pl-3 pr-4 backdrop-blur backdrop-filter sm:pr-6 lg:pr-8">
+                                                    Action
+                                                </th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                                @foreach($campaigns as $campaign)
+                                                    <tr>
+                                                        <td class="whitespace-nowrap border-b border-gray-200 py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6 lg:pl-8">
+                                                            {{$campaign->name}}
+                                                        </td>
+                                                        <td class="whitespace-nowrap border-b border-gray-200 py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6 lg:pl-8">
+                                                            {{$campaign->created_at}}
+                                                        </td>
+                                                        <td class="whitespace-nowrap border-b border-gray-200 py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6 lg:pl-8">
+                                                            {{$campaign->status}}
+                                                        </td>
+                                                        <td class="relative whitespace-nowrap border-b border-gray-200 py-4 pl-3 pr-4 text-center text-sm font-medium sm:pr-8 lg:pr-8">
+                                                            <div class="flex space-x-10">
+                                                                <div><a href="{{ route('analytics.index', $campaign) }}" class="text-blue-600 hover:text-blue-900">Results</a></div>
+                                                                <div><a href="#" class="text-indigo-600 hover:text-indigo-900">Edit</a></div>
+                                                                <div>
+                                                                    <form   method="POST" action="">
+                                                                        @csrf
+                                                                        @method('delete')
+                                                                            <button type="submit"
+                                                                                    onclick="return confirm('Are you sure you want to delete this employee?');"
+                                                                                    class="text-red-600 hover:text-red-900">
+                                                                                    Delete
+                                                                            </button>
+                                                                    </form>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                @endforeach
+
+                                            </tbody>
+                                        </table>
+
+                                        <!-- Campaign Management Table -->
+                                    </div>
                                 </div>
                             </div>
                         </div>
