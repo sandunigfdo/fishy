@@ -18,6 +18,7 @@ class Employee extends Model
         'position',
         'department',
         'url_token',
+        'group_id',
     ];
     public function user():HasOne{
         return $this->hasOne(User::class);
