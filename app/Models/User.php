@@ -49,7 +49,7 @@ class User extends Authenticatable
         ];
     }
 
-    public function emploees():HasMany{
+    public function employees():HasMany{
         return $this->hasMany(Employee::class);
     }
     public function role():BelongsTo{
