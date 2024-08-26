@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\AnalyticsController;
+use App\Http\Controllers\CampaignController;
 use App\Http\Controllers\CanaryTokenController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\EmployeeController;
@@ -8,6 +10,7 @@ use App\Http\Controllers\EmployeeInputHandleController;
 use App\Http\Controllers\EmployeeManagementController;
 use App\Http\Controllers\GroupController;
 use App\Http\Controllers\LandingController;
+use App\Http\Controllers\ResultsController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UserDashboardController;
@@ -37,12 +40,25 @@ Route::middleware('auth', EnsureAdmin::class)->group(function () {
 
 Route::middleware('auth')->group(function () {
     Route::get('/userdashboard', [UserDashboardController::class, 'index'])->name('userdashboard');
+
     Route::resource('employees', EmployeeController::class)->only(['index', 'store', 'edit', 'update', 'destroy']);
+
     Route::get('/employee_management', [EmployeeManagementController::class, 'index'])->name('employee_management');
+
     Route::get('/groups', [EmployeeManagementController::class, 'index'])->name('employee_management');
     Route::get('/groups/create', [GroupController::class, 'create'])->name('groups.create');
     Route::post('/groups', [GroupController::class, 'store'])->name('groups.store');
     Route::post('/employees/assign_group', [EmployeeGroupController::class, 'store'])->name('employee_groups.store');
+
+    Route::get('/campaign', [CampaignController::class, 'index'])->name('campaign.index');
+    Route::post('/campaign', [CampaignController::class, 'store'])->name('campaign.store');
+
+    Route::get('/employees/by-group', [CampaignController::class, 'getEmployeesByGroup'])->name('employees.byGroup');
+
+    Route::post('/results', [ResultsController::class, 'store'])->name('results.store');
+
+    Route::get('/analytics/{campaign}', [AnalyticsController::class, 'index'])->name('analytics.index');
+
 });
 
 Route::get('/landing', [LandingController::class, 'index'])->name('landing');
