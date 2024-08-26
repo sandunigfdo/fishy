@@ -60,4 +60,8 @@ class User extends Authenticatable
         return $this->hasMany(Group::class);
     }
 
+    public function campaigns():HasMany{
+        return $this->hasMany(Campaign::class);
+    }
+
 }
