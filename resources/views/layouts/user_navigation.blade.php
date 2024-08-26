@@ -26,7 +26,7 @@
                 </div>
                 <!-- Campaign Management -->
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link :href="route('employees.index')" :active="request()->routeIs('employees.index')">
+                    <x-nav-link :href="route('campaign.index')" :active="request()->routeIs('campaign.index')">
                         {{ __('Campaign Management') }}
                     </x-nav-link>
                 </div>
