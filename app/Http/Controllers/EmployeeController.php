@@ -60,7 +60,7 @@ class EmployeeController extends Controller
         $employee->url_token = $this->generateToken();
         $employee->save();
 
-        return redirect()->route('userdashboard');
+        return redirect()->route('employee_management');
 
     }
 
