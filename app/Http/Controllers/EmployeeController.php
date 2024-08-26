@@ -111,7 +111,7 @@ class EmployeeController extends Controller
         ]);
 
         $employee->update($validated);
-        return redirect()->route('userdashboard');
+        return redirect()->route('employee_management');
 
     }
 
@@ -122,6 +122,6 @@ class EmployeeController extends Controller
     {
         Gate::authorize('delete',$employee);
         $employee->delete();
-        return redirect()->route('userdashboard');
+        return redirect()->route('employee_management');
     }
 }
