@@ -50,7 +50,7 @@
                                             @foreach($employees as $employee)
                                                 <tr>
                                                     <td class="whitespace-nowrap border-b border-gray-200 py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6 lg:pl-8">
-                                                        {{$employee->f_name}}
+                                                        {{$employee->f_name}} {{$employee->l_name}}
                                                     </td>
                                                     <td class="whitespace-nowrap border-b border-gray-200 py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6 lg:pl-8">
                                                         {{$employee->email}}
@@ -67,9 +67,7 @@
                                                             @foreach($employee_results[$employee->id] as $result)
                                                                 <div>
                                                                     @if($result->click_link == 1)
-                                                                        <p class="rounded bg-yellow-300 px-2 py-1 text-xs shadow-sm hover:bg-yellow-400 w-20">
-                                                                            Clicked Link
-                                                                        </p>
+                                                                        <span class="inline-flex items-center rounded-md bg-yellow-100 px-1.5 py-0.5 text-xs font-medium text-yellow-700">clicked link</span>
                                                                     @endif
 
                                                                 </div>
@@ -84,9 +82,7 @@
                                                             @foreach($employee_results[$employee->id] as $result)
                                                                 <div>
                                                                     @if($result->submit_creds == 1)
-                                                                        <p class="rounded bg-red-300 px-2 py-1 text-xs shadow-sm hover:bg-red-400 w-28">
-                                                                            Submitted data
-                                                                        </p>
+                                                                        <span class="inline-flex items-center rounded-md bg-red-100 px-1.5 py-0.5 text-xs font-medium text-red-700">submitted data</span>
                                                                     @endif
 
                                                                 </div>
@@ -105,6 +101,8 @@
                                         </table>
 
                                         <!-- Campaign Management Table -->
+
+
                                     </div>
                                 </div>
                             </div>
