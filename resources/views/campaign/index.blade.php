@@ -59,7 +59,7 @@
                                                         <td class="relative whitespace-nowrap border-b border-gray-200 py-4 pl-3 pr-4 text-center text-sm font-medium sm:pr-8 lg:pr-8">
                                                             <div class="flex space-x-10">
                                                                 <div><a href="{{ route('analytics.index', $campaign) }}" class="text-blue-600 hover:text-blue-900">Results</a></div>
-                                                                <div><a href="#" class="text-indigo-600 hover:text-indigo-900">Edit</a></div>
+
                                                                 <div>
                                                                     <form   method="POST" action="">
                                                                         @csrf
@@ -100,7 +100,7 @@
                         <h1 class="text-center text-lg font-semibold leading-6 tracking-tight text-gray-900">Create a Campaign</h1>
                     </div>
 
-                    <!-- Register organization Form -->
+                    <!-- Add new Campaign Form -->
                     <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
                         <form method="POST" action="{{ route('campaign.store') }}">
                             @csrf
@@ -139,7 +139,7 @@
                             </div>
                         </form>
                     </div>
-                    <!-- Register organization Form -->
+                    <!-- Add new Campaign Form -->
                 </div>
             </div>
         </div>
