@@ -7,15 +7,14 @@
 
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-10">
                     <div class="px-4 sm:px-6 lg:px-8">
                         <div class="sm:flex sm:items-center">
                             <div class="sm:flex-auto">
-                                <h1 class="text-lg font-semibold leading-6 text-gray-900">Campaigns</h1>
-                                <p class="mt-2 text-base text-gray-700">Ongoing Campaigns.</p>
+                                <h1 class="text-lg font-semibold leading-6 text-gray-900">Ongoing Campaigns</h1>
                             </div>
+
                         </div>
                         <div class="mt-8 flow-root">
                             <div class="px-4 sm:px-6 lg:px-8 -mx-4 -my-2 sm:-mx-6 lg:-mx-8">
