@@ -75,7 +75,7 @@ class ResultsController extends Controller
 
     }
 
-    public function generateToken($campaignId, $employeeId){
+    public function generateToken(int $campaignId, int $employeeId){
         do {
             $url_token = Str::random(32); //Generate the random token
 
