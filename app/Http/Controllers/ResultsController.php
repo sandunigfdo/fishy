@@ -36,8 +36,11 @@ class ResultsController extends Controller
         $groupId = $request->input('groups');
         $employees = Employee::where('group_id', $groupId)->get();
 
+        $base_url = 'http://localhost:9090/landing?token=';
+
         foreach ($employees as $employee) {
             $url_token = $this->generateToken($campaignId, $employee->id);
+            $email_url = $this->generateEmailUrl($base_url, $url_token);
 
             // Construct the canary_url input name dynamically
             $canaryInputName = 'canary-' . $employee->id;
@@ -62,6 +65,7 @@ class ResultsController extends Controller
                'campaign_id' => $campaignId,
                'employee_id' => $employee->id,
                'url_token' => $url_token,
+               'email_url' => $email_url,
                'canary_url' => $canary_url,
                'canary_id' => $token_id,
 
@@ -84,6 +88,13 @@ class ResultsController extends Controller
         }while($existingToken); // Determine if any records exist that match query's constraints
 
         return $url_token;
+    }
+
+    public function generateEmailUrl(string $base_url, string $url_token){
+        // Construct the url send in the email
+        $email_url = $base_url . $url_token;
+
+        return $email_url;
     }
 
     /**
