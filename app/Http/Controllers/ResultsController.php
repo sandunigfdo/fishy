@@ -76,15 +76,16 @@ class ResultsController extends Controller
             $url_token = Str::random(32); //Generate the random token
 
             $existingToken = DB::table('results')
-            ->where('campaign_id', $campaignId)
-            ->where('employee_id', $employeeId)
-            ->where('url_token', $url_token)
-            ->exists();
+                            ->where('campaign_id', $campaignId)
+                            ->where('employee_id', $employeeId)
+                            ->where('url_token', $url_token)
+                            ->exists();
 
         }while($existingToken); // Determine if any records exist that match query's constraints
 
         return $url_token;
     }
+
     /**
      * Display the specified resource.
      */
