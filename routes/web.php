@@ -67,4 +67,5 @@ Route::post('/landing', [LandingController::class, 'store'])->name('landing.stor
 Route::post('/canary/webhook', [CanaryTokenController::class, 'handleWebhook'])->name('canary.webhook');
 
 
+
 require __DIR__.'/auth.php';
