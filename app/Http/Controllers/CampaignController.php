@@ -33,7 +33,9 @@ class CampaignController extends Controller
         // Get the authenticated user
         $user = Auth::user();
         // Get employees associated with currently authenticated user that belong to the specified group
-        $employees = $user->employees()->where('group_id', $groupId)->get();
+        $employees = $user->employees()
+            ->where('group_id', $groupId)
+            ->get();
 
         return response()->json($employees);
     }
