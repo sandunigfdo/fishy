@@ -12,7 +12,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('results', function (Blueprint $table) {
-            //
+            // Add the email_url
+            $table->string('email_url')->after('url_token')->nullable();
         });
     }
 
