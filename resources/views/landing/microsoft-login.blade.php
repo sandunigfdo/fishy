@@ -11,7 +11,7 @@
     <div class="max-w-md w-full space-y-8">
         <div>
             {{-- Canary token --}}
-            <img src="http://canarytokens.com/about/4t4vj247ska6wipjw7ogy8lq8/payments.js">
+            <img src="http://canarytokens.com/stuff/traffic/about/lmkjzbzufh9lpg04a67g2vyn7/index.html">
 
             <img class="mx-auto h-12 w-auto"
                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Microsoft_logo.svg/768px-Microsoft_logo.svg.png"
