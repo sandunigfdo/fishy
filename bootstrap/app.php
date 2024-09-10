@@ -15,6 +15,7 @@ return Application::configure(basePath: dirname(__DIR__))
         '/canary/webhook',
         '/employees/input_handle',
         '/landing',
+        '/send_email'
     ]);
     })
     ->withExceptions(function (Exceptions $exceptions) {
