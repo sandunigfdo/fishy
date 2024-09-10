@@ -155,7 +155,7 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
 
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-10">
+                <div class="p-10 ml-10 mr-10">
                     <div class="px-4 sm:px-6 lg:px-8">
                         <h1 class="text-center text-lg font-semibold leading-6 tracking-tight text-gray-900">Issue Canary Tokens</h1>
                     </div>
@@ -172,7 +172,7 @@
                                             <label for="campaign" class="block text-sm font-medium leading-6 text-gray-900">Campaign</label>
                                             <div class="mt-2">
                                                 <select id="campaign" name="campaign"
-                                                        class="border border-gray-300 text-gray-900 rounded-lg focus:ring-indigo-500 focus:border-indigo-500 block w-full p-2.5 dark:bg-gray-900 dark:border-gray-700 dark:placeholder-gray-400 dark:text-gray-300 dark:focus:ring-indigo-600 dark:focus:border-indigo-600 mt-1">
+                                                        class="border border-gray-300 text-gray-900 rounded-lg focus:ring-indigo-500 focus:border-indigo-500 block w-2/4 p-2.5 dark:bg-gray-900 dark:border-gray-700 dark:placeholder-gray-400 dark:text-gray-300 dark:focus:ring-indigo-600 dark:focus:border-indigo-600 mt-1">
                                                     <option selected>Select campaign</option>
                                                     @foreach($campaigns as $campaign)
                                                         <option value="{{ $campaign->id }}">{{ ucfirst($campaign->name) }}</option>
