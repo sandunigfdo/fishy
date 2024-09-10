@@ -161,7 +161,8 @@
                     </div>
 
                     <!-- Canary issue Form -->
-                    <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm" x-data="employeeSelection()">
+                    <div class="mt-10 w-full" x-data="employeeSelection()">
+
                         <form method="POST" action="{{ route('results.store') }}">
                             @csrf
                             <div class="space-y-12">
@@ -185,7 +186,7 @@
                                             <label for="groups" class="block text-sm font-medium leading-6 text-gray-900">Employee Group</label>
                                             <div class="mt-2">
                                                 <select id="groups" name="groups" x-model="selectedGroup" @change="fetchEmployees"
-                                                    class="border border-gray-300 text-gray-900 rounded-lg focus:ring-indigo-500 focus:border-indigo-500 block w-full p-2.5">
+                                                    class="border border-gray-300 text-gray-900 rounded-lg focus:ring-indigo-500 focus:border-indigo-500 block w-2/4 p-2.5">
                                                     <option selected>Select group</option>
                                                     @foreach($groups as $group)
                                                         <option value="{{ $group->id }}">{{ ucfirst($group->name) }}</option>
