@@ -11,6 +11,7 @@ use App\Http\Controllers\EmployeeManagementController;
 use App\Http\Controllers\GroupController;
 use App\Http\Controllers\LandingController;
 use App\Http\Controllers\ResultsController;
+use App\Http\Controllers\SendEmailsController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UserDashboardController;
@@ -60,6 +61,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/analytics/{campaign}', [AnalyticsController::class, 'index'])->name('analytics.index');
 
 });
+
+Route::post('/send_email', [SendEmailsController::class, 'store'])->name('send_email.store');
 
 Route::get('/landing', [LandingController::class, 'index'])->name('landing');
 Route::post('/landing', [LandingController::class, 'store'])->name('landing.store');
