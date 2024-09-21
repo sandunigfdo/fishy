@@ -8,7 +8,6 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
-use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
 use Illuminate\View\View;
@@ -20,9 +19,7 @@ class EmployeeController extends Controller
      */
     public function index(): View
     {
-        $employees = Employee::with('group')->get();
-
-        return view('employees.index',[
+        return view('user.employee_management', [
             'employees' => Employee::all(),
             'groups' => Group::all(),
         ]);
@@ -31,9 +28,9 @@ class EmployeeController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create(): View
     {
-        //
+        return view('employees.index');
     }
 
     /**
