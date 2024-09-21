@@ -14,14 +14,8 @@
 
                 <!-- Campaign Summary -->
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link :href="route('userdashboard')" :active="request()->routeIs('userdashboard')">
-                        {{ __('Campaign Summary') }}
-                    </x-nav-link>
-                </div>
-                <!-- User Management -->
-                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                        {{ __('Users') }}
+                        {{ __('Campaign Summary') }}
                     </x-nav-link>
                 </div>
                 <!-- Employee Management -->
@@ -34,6 +28,12 @@
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                     <x-nav-link :href="route('campaign.index')" :active="request()->routeIs('campaign.index')">
                         {{ __('Campaigns') }}
+                    </x-nav-link>
+                </div>
+                <!-- User Management -->
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <x-nav-link :href="route('users.index')" :active="request()->routeIs('users.index')">
+                        {{ __('Users') }}
                     </x-nav-link>
                 </div>
 
