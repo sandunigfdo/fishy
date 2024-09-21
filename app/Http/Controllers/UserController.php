@@ -2,12 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Organization;
 use App\Models\Role;
 use App\Models\User;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rule;
 use Illuminate\View\View;
@@ -19,10 +17,10 @@ class UserController extends Controller
      */
     public function index(): View
     {
+        // TODO: Add pagination to increase performance
         return view('admin.index',[
             'roles' => Role::all(),
         ]);
-    //  Add pagination to increase performance
     }
 
     /**
