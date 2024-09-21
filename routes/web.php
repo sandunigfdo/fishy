@@ -22,6 +22,12 @@ Route::get('/', function () {
 });
 
 Route::middleware('auth')->group(function () {
+    // GET          /chirps                 index   chirps.index
+    // POST	        /chirps	                store	chirps.store
+    // GET	        /chirps/{chirp}/edit    edit	chirps.edit
+    // PUT/PATCH	/chirps/{chirp}         update	chirps.update
+
+    // Manage user profile
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
