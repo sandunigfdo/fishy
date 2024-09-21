@@ -12,13 +12,32 @@
 
                 <!-- Navigation Links -->
 
-                <!-- Customer Management -->
+                <!-- Campaign Summary -->
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <x-nav-link :href="route('userdashboard')" :active="request()->routeIs('userdashboard')">
+                        {{ __('Campaign Summary') }}
+                    </x-nav-link>
+                </div>
+                <!-- User Management -->
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                        {{ __('Customer Management') }}
+                        {{ __('Users') }}
+                    </x-nav-link>
+                </div>
+                <!-- Employee Management -->
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <x-nav-link :href="route('employee_management')" :active="request()->routeIs('employee_management')">
+                        {{ __('Employees') }}
+                    </x-nav-link>
+                </div>
+                <!-- Campaign Management -->
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <x-nav-link :href="route('campaign.index')" :active="request()->routeIs('campaign.index')">
+                        {{ __('Campaigns') }}
                     </x-nav-link>
                 </div>
 
+                <!-- /Navigation Links -->
 
             </div>
 
