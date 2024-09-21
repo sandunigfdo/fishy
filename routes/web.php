@@ -25,15 +25,11 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-});
 
-Route::middleware('auth')->group(function () {
     Route::get('register', [RegisteredUserController::class, 'create'])->name('register');
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
     Route::resource('/users', UserController::class)->only(['index', 'store', 'edit', 'update', 'destroy']);
-});
 
-Route::middleware('auth')->group(function () {
     Route::get('/userdashboard', [UserDashboardController::class, 'index'])->name('userdashboard');
 
     Route::resource('employees', EmployeeController::class)->only(['index', 'store', 'edit', 'update', 'destroy']);
@@ -53,7 +49,6 @@ Route::middleware('auth')->group(function () {
     Route::post('/results', [ResultsController::class, 'store'])->name('results.store');
 
     Route::get('/analytics/{campaign}', [AnalyticsController::class, 'index'])->name('analytics.index');
-
 });
 
 Route::post('/send_email', [SendEmailsController::class, 'store'])->name('send_email.store');
