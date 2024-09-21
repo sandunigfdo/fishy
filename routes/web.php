@@ -3,7 +3,6 @@
 use App\Http\Controllers\AnalyticsController;
 use App\Http\Controllers\CampaignController;
 use App\Http\Controllers\CanaryTokenController;
-use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\EmployeeGroupController;
 use App\Http\Controllers\EmployeeManagementController;
@@ -28,14 +27,10 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
-    // TODO: Ideally "/" should show the campaign summary. And this route should be "/users"
-    Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
+    Route::resource('/users', UserController::class)->only(['index', 'create', 'store', 'edit', 'update', 'destroy']);
 
-    Route::resource('/users', UserController::class)->only(['index', 'store', 'edit', 'update', 'destroy']);
-
-    // Campaign summary
-    // TODO: This should be "/"
-    Route::get('/userdashboard', [UserDashboardController::class, 'index'])->name('userdashboard');
+    // Home page - campaign summary
+    Route::get('/', [UserDashboardController::class, 'index'])->name('dashboard');
 
     Route::resource('employees', EmployeeController::class)->only(['index', 'store', 'edit', 'update', 'destroy']);
 
