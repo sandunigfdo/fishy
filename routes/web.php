@@ -5,7 +5,6 @@ use App\Http\Controllers\CampaignController;
 use App\Http\Controllers\CanaryTokenController;
 use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\EmployeeGroupController;
-use App\Http\Controllers\EmployeeManagementController;
 use App\Http\Controllers\GroupController;
 use App\Http\Controllers\LandingController;
 use App\Http\Controllers\ResultsController;
@@ -32,11 +31,8 @@ Route::middleware('auth')->group(function () {
     // Home page - campaign summary
     Route::get('/', [UserDashboardController::class, 'index'])->name('dashboard');
 
-    Route::resource('employees', EmployeeController::class)->only(['index', 'store', 'edit', 'update', 'destroy']);
+    Route::resource('employees', EmployeeController::class)->only(['index', 'create', 'store', 'edit', 'update', 'destroy']);
 
-    Route::get('/employee_management', [EmployeeManagementController::class, 'index'])->name('employee_management');
-
-    Route::get('/groups', [EmployeeManagementController::class, 'index'])->name('employee_management');
     Route::get('/groups/create', [GroupController::class, 'create'])->name('groups.create');
     Route::post('/groups', [GroupController::class, 'store'])->name('groups.store');
     Route::post('/employees/assign_group', [EmployeeGroupController::class, 'store'])->name('employee_groups.store');
