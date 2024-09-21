@@ -10,12 +10,6 @@ class EmployeeGroupController extends Controller
 {
     public function store(Request $request): RedirectResponse
     {
-//        dd($request->group_id);
-//        $validated = $request->validate([
-//            'group_id' => 'required',
-//            'employee_id' => 'required',
-//        ]);
-
         $employee_ids = $request->employee_ids;
         foreach ($employee_ids as $employee_id) {
             $employee = Employee::find($employee_id);
