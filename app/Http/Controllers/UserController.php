@@ -15,15 +15,17 @@ class UserController extends Controller
      */
     public function index(): View
     {
-        return view('admin.index');
+        return view('dashboard',[
+            'users' => User::all(),
+        ]);
     }
 
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create(): View
     {
-        //
+        return view('admin.index');
     }
 
     /**
