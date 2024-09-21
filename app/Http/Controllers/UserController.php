@@ -17,10 +17,7 @@ class UserController extends Controller
      */
     public function index(): View
     {
-        // TODO: Add pagination to increase performance
-        return view('admin.index',[
-            'roles' => Role::all(),
-        ]);
+        return view('admin.index');
     }
 
     /**
@@ -37,15 +34,10 @@ class UserController extends Controller
     public function store(Request $request): RedirectResponse
     {
         // Validate incoming request data
-        $roles = Role::all()->modelKeys();
-
         $validated = $request->validate([
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255',
             'password' => 'required|string|min:8',
-            'role' => 'required', Rule::in($roles),
-            'organization' => 'required|string|max:255',
-
         ]);
 
         // Create a new User
@@ -53,20 +45,9 @@ class UserController extends Controller
         $user->name = $validated['name'];
         $user->email = $validated['email'];
         $user->password = Hash::make($validated['password']);
-        $user->role_id = $validated['role'];
-        $user->organization = $validated['organization'];
         $user->save();
 
         return redirect(route('dashboard'));
-    }
-
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(Organization $organization)
-    {
-        //
     }
 
     /**
@@ -74,10 +55,8 @@ class UserController extends Controller
      */
     public function edit(User $user): View
     {
-//        Gate::authorize('update', $user);
         return view('admin.edit',[
             'user' => $user,
-            'roles' => Role::all(),
         ]);
     }
 
@@ -86,22 +65,15 @@ class UserController extends Controller
      */
     public function update(Request $request, User $user): RedirectResponse
     {
-//        Gate::authorize('update', $user);
-        $roles = Role::all()->modelKeys();
-
         $validated = $request->validate([
             'name' => 'required|string|max:255',
-            'organization' => 'required|string|max:255',
             'email' => 'required|string|email|max:255',
-            'role' => 'required', Rule::in($roles),
 
         ]);
 
         // Update user information
         $user->name = $validated['name'];
-        $user->organization = $validated['organization'];
         $user->email = $validated['email'];
-        $user->role_id = $validated['role'];
         $user->save();
 
         return redirect(route('dashboard'));
@@ -112,7 +84,9 @@ class UserController extends Controller
      */
     public function destroy(User $user): RedirectResponse
     {
-//        Gate::authorize('delete', $user);
+        // TODO:
+        //  - Attached groups, employees and campaigns should be detached before deleting
+        //  - Maybe enable soft deletes
         $user->delete();
         return redirect(route('dashboard'));
     }
