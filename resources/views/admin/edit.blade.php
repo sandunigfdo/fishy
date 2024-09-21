@@ -74,7 +74,7 @@
                                <div class="pt-6">
                                    <div class="border-t border-gray-900/10 pb-12">
                                     <div class="mt-6 flex items-center justify-end gap-x-6">
-                                        <a href="{{ route('userdashboard') }}"
+                                        <a href="{{ route('users.index') }}"
                                                 class="text-sm font-semibold leading-6 text-gray-900">
                                                 Cancel
                                         </a>
