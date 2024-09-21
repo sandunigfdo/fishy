@@ -47,7 +47,7 @@ class UserController extends Controller
         $user->password = Hash::make($validated['password']);
         $user->save();
 
-        return redirect(route('dashboard'));
+        return redirect(route('users.index'));
     }
 
     /**
@@ -76,7 +76,7 @@ class UserController extends Controller
         $user->email = $validated['email'];
         $user->save();
 
-        return redirect(route('dashboard'));
+        return redirect(route('users.index'));
     }
 
     /**
@@ -88,6 +88,6 @@ class UserController extends Controller
         //  - Attached groups, employees and campaigns should be detached before deleting
         //  - Maybe enable soft deletes
         $user->delete();
-        return redirect(route('dashboard'));
+        return redirect(route('users.index'));
     }
 }
