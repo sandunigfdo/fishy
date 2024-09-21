@@ -15,11 +15,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UserDashboardController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Auth\RegisteredUserController;
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
 Route::middleware('auth')->group(function () {
     // GET          /chirps                 index   chirps.index
@@ -32,10 +28,13 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
-    Route::get('register', [RegisteredUserController::class, 'create'])->name('register');
-    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+    // TODO: Ideally "/" should show the campaign summary. And this route should be "/users"
+    Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
+
     Route::resource('/users', UserController::class)->only(['index', 'store', 'edit', 'update', 'destroy']);
 
+    // Campaign summary
+    // TODO: This should be "/"
     Route::get('/userdashboard', [UserDashboardController::class, 'index'])->name('userdashboard');
 
     Route::resource('employees', EmployeeController::class)->only(['index', 'store', 'edit', 'update', 'destroy']);
