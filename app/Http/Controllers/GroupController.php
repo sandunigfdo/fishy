@@ -45,7 +45,7 @@ class GroupController extends Controller
         $group->user_id = Auth::user()->id;
         $group->save();
 
-        return redirect('/employee_management')->with('success', 'Group created!');
+        return redirect()->route('employees.index')->with('success', 'Group created!');
     }
 
     /**

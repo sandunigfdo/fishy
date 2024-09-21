@@ -60,7 +60,7 @@ class EmployeeController extends Controller
         $employee->url_token = $this->generateToken();
         $employee->save();
 
-        return redirect()->route('employee_management');
+        return redirect()->route('employees.index');
 
     }
 
@@ -111,7 +111,7 @@ class EmployeeController extends Controller
         ]);
 
         $employee->update($validated);
-        return redirect()->route('employee_management');
+        return redirect()->route('employees.index');
 
     }
 
@@ -122,6 +122,6 @@ class EmployeeController extends Controller
     {
         Gate::authorize('delete',$employee);
         $employee->delete();
-        return redirect()->route('employee_management');
+        return redirect()->route('employees.index');
     }
 }

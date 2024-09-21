@@ -23,6 +23,6 @@ class EmployeeGroupController extends Controller
             $employee->save();
         }
 
-        return redirect('/employee_management')->with('success', 'Group created!');
+        return redirect()->route('employees.index')->with('success', 'Group created!');
     }
 }
