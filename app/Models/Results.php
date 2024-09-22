@@ -22,7 +22,8 @@ class Results extends Model
         return $this->HasMany(Employee::class);
     }
 
-    public function campaign():BelongsTo{
+    public function campaign(): BelongsTo
+    {
         return $this->belongsTo(Campaign::class);
     }
 }
