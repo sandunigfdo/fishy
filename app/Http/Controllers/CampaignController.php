@@ -10,7 +10,6 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\View\View;
-use Illuminate\Http\JsonResponse;
 
 class CampaignController extends Controller
 {
@@ -56,9 +55,6 @@ class CampaignController extends Controller
 
         $validated = $request->validate([
             'name' => 'required|string|max:255',
-//            'created_date' => 'nullable|date',
-//            'launch_date' => 'nullable|date',
-//            'status' => 'nullable|string|max:255',
         ]);
 
         // Create a new campaign
@@ -66,7 +62,7 @@ class CampaignController extends Controller
         $campaign->name = $validated['name'];
         $campaign->created_date = null;
         $campaign->launch_date = null;
-        $campaign->status = null;
+        $campaign->status = 'In Progress';
         $campaign->user_id = Auth::user()->id;
         $campaign->save();
 
