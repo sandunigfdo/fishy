@@ -73,10 +73,7 @@
                                                                 </div>
                                                                 <!-- Launch button -->
                                                                 <div class="ml-auto mt-4 sm:mt-0 sm:flex-none">
-                                                                    <a href="#"
-                                                                       class="block rounded-md bg-indigo-600 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
-                                                                        Launch Campaign
-                                                                    </a>
+
                                                                 </div>
                                                             </div>
                                                         </td>
