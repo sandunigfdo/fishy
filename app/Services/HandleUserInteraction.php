@@ -8,23 +8,29 @@ use Illuminate\Support\Facades\Log;
 
 class HandleUserInteraction
 {
-        public function store(string $data)
-        {
-            // Decode the JSON to an associative array
-            $data = json_decode($data, true);
-            // Access the 'token'
-            $token = $data['token'];
+    /**
+     * Tracks if user submitted the form.
+     *
+     * @param string $data
+     * @return string
+     */
+    public static function submitted(string $data): string
+    {
+        // Decode the JSON to an associative array
+        $data = json_decode($data, true);
+        // Access the 'token'
+        $token = $data['token'];
 
-           // If the url_token passed, exists in the results table, set the submit_creds to TRUE
-           $found = Result::where('url_token', $token)->exists();
+       // If the url_token passed, exists in the results table, set the submit_creds to TRUE
+       $found = Result::where('url_token', $token)->exists();
 
-           if($found == true){
-               DB::table('results')
-                  ->where('url_token', $token)
-                  ->update(['submit_creds' => true]);
-           }
+       if($found){
+           DB::table('results')
+              ->where('url_token', $token)
+              ->update(['submit_creds' => true]);
+       }
 
-           return redirect()->route('campaign.index');
+       return 'ok';
 
-        }
+    }
 }

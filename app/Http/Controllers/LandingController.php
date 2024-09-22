@@ -28,9 +28,7 @@ class LandingController extends Controller
 
         $jsonData = json_encode($data);
 
-        $handleEmployeeInput = new HandleUserInteraction;
-
-        $response = $handleEmployeeInput->store($jsonData);
+        $response = HandleUserInteraction::submitted($jsonData);
 
         return $response;
 
