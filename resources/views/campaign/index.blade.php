@@ -58,10 +58,16 @@
                                                         </td>
                                                         <td class="relative whitespace-nowrap border-b border-gray-200 py-4 pl-3 pr-4 text-center text-sm font-medium sm:pr-8 lg:pr-8">
                                                             <div class="flex space-x-10">
-                                                                <div><a href="{{ route('analytics.index', $campaign) }}" class="text-blue-600 hover:text-blue-900">Results</a></div>
+                                                                <div>
+                                                                    <a
+                                                                        href="{{ route('analytics.index', $campaign) }}"
+                                                                        class="text-blue-600 hover:text-blue-900">
+                                                                        Results
+                                                                    </a>
+                                                                </div>
 
                                                                 <div>
-                                                                    <form   method="POST" action="{{ route('campaign.destroy', $campaign) }}">
+                                                                    <form method="POST" action="{{ route('campaign.destroy', $campaign) }}">
                                                                         @csrf
                                                                         @method('delete')
                                                                             <button type="submit"
@@ -71,6 +77,19 @@
                                                                             </button>
                                                                     </form>
                                                                 </div>
+
+                                                                @if($campaign->status === \App\Models\Campaign::inProgress)
+                                                                    <div>
+                                                                        <form method="POST" action="#">
+                                                                            @csrf
+                                                                                <button type="submit"
+                                                                                        onclick="return confirm('Are you sure you want to launch this campaign?');"
+                                                                                        class="text-green-600 hover:text-green-900">
+                                                                                        Launch
+                                                                                </button>
+                                                                        </form>
+                                                                    </div>
+                                                                @endif
                                                                 <!-- Launch button -->
                                                                 <div class="ml-auto mt-4 sm:mt-0 sm:flex-none">
 
