@@ -2,11 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\EmailCampaign;
-use Illuminate\Http\RedirectResponse;
 use Symfony\Component\Mailer\Exception\TransportException;
 
 
