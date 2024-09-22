@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Employee;
-use App\Models\Results;
+use App\Models\Result;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
@@ -100,7 +100,7 @@ class ResultsController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Results $results)
+    public function show(Result $results)
     {
         //
     }
@@ -108,7 +108,7 @@ class ResultsController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Results $results)
+    public function edit(Result $results)
     {
         //
     }
@@ -116,7 +116,7 @@ class ResultsController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Results $results)
+    public function update(Request $request, Result $results)
     {
         //
     }
@@ -124,7 +124,7 @@ class ResultsController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Results $results)
+    public function destroy(Result $results)
     {
         //
     }

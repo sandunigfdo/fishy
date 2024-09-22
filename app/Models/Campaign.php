@@ -23,7 +23,7 @@ class Campaign extends Model
     }
 
     public function results():HasMany{
-        return $this->hasMany(Results::class);
+        return $this->hasMany(Result::class);
     }
 
 }

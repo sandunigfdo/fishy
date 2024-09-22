@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Campaign;
 use App\Models\Employee;
 use App\Models\Group;
-use App\Models\Results;
+use App\Models\Result;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -22,7 +22,7 @@ class CampaignController extends Controller
             'employees' => Employee::all(),
             'groups' => Group::all(),
             'campaigns' => Campaign::all(),
-            'results' => Results::all()
+            'results' => Result::all()
         ]);
     }
 

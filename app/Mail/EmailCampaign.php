@@ -2,7 +2,7 @@
 
 namespace App\Mail;
 
-use App\Models\Results;
+use App\Models\Result;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
@@ -24,7 +24,7 @@ class EmailCampaign extends Mailable
     public function __construct(
         public Employee $employee,
         public Campaign $campaign,
-        public Results $results,
+        public Result   $results,
     ) { }
 
 
