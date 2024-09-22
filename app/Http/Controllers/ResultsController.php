@@ -74,7 +74,8 @@ class ResultsController extends Controller
 
     }
 
-    public function generateToken(int $campaignId, int $employeeId){
+    public function generateToken(int $campaignId, int $employeeId)
+    {
         do {
             $url_token = Str::random(32); //Generate the random token
 
@@ -84,12 +85,13 @@ class ResultsController extends Controller
                             ->where('url_token', $url_token)
                             ->exists();
 
-        }while($existingToken); // Determine if any records exist that match query's constraints
+        } while($existingToken); // Determine if any records exist that match query's constraints
 
         return $url_token;
     }
 
-    public function generateEmailUrl(string $base_url, string $url_token){
+    public function generateEmailUrl(string $base_url, string $url_token)
+    {
         // Construct the url send in the email
         $email_url = $base_url . $url_token;
 
