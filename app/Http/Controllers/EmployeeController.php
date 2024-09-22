@@ -117,6 +117,7 @@ class EmployeeController extends Controller
      */
     public function destroy(Employee $employee): RedirectResponse
     {
+        // TODO: Detach relevant related records ("result" record)
         Gate::authorize('delete',$employee);
         $employee->delete();
         return redirect()->route('employees.index');
