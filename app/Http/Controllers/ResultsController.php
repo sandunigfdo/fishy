@@ -41,33 +41,13 @@ class ResultsController extends Controller
             $url_token = $this->generateToken($campaignId, $employee->id);
             $email_url = $this->generateEmailUrl($base_url, $url_token);
 
-            // Construct the canary_url input name dynamically
-            $canaryInputName = 'canary-' . $employee->id;
-
-            // Access the canary_url for the current employee
-            $canary_url = $request->input($canaryInputName);
-
-            // Extract the canary_tokenId from the canary_url
-            $passedUrl = parse_url($canary_url);
-            // Extract the path
-            $path = $passedUrl['path'];
-            // Split the path & get the ID
-            $pathSegments = explode('/', trim($path, '/'));
-            foreach ($pathSegments as $segment) {
-                if (preg_match('/^[a-zA-Z0-9]{20,}$/', $segment)) {
-                    $token_id = $segment;
-                    break;
-                }
-            }
-
             DB::table('results')->insert([
                'campaign_id' => $campaignId,
                'employee_id' => $employee->id,
                'url_token' => $url_token,
                'email_url' => $email_url,
-               'canary_url' => $canary_url,
-               'canary_id' => $token_id,
-
+               'canary_url' => null,
+               'canary_id' => null,
             ]);
         }
         return redirect()->route('campaign.index');
