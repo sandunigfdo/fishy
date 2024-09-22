@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('results', function (Blueprint $table) {
-            $table->boolean('email_sent')->default(false);
+            $table->boolean('email_sent')->default(false)->after('submit_creds');
         });
     }
 
