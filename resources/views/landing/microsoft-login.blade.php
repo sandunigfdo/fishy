@@ -10,8 +10,7 @@
 <div class="min-h-screen flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
     <div class="max-w-md w-full space-y-8">
         <div>
-            {{-- Canary token --}}
-            <img src="http://canarytokens.com/stuff/traffic/about/lmkjzbzufh9lpg04a67g2vyn7/index.html">
+            {{-- Canary token goes here --}}
 
             <img class="mx-auto h-12 w-auto"
                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Microsoft_logo.svg/768px-Microsoft_logo.svg.png"
