@@ -40,7 +40,6 @@ class UserDashboardController extends Controller
             $click_link_count[$campaignId] = $link_count[$campaignId];
             $submit_data_count[$campaignId] = $submit_count[$campaignId];
         }
-//        dd($click_link_count);
 
         return view('user.userdashboard',[
             'ongoing_campaigns' => $ongoing_campaigns,
