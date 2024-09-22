@@ -20,10 +20,12 @@ class Employee extends Model
         'url_token',
         'group_id',
     ];
+
     public function user(): HasOne
     {
         return $this->hasOne(User::class);
     }
+
     public function group(): BelongsTo
     {
         return $this->belongsTo(Group::class);
