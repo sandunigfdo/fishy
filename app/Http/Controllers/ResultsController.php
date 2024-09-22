@@ -31,7 +31,6 @@ class ResultsController extends Controller
      */
     public function store(Request $request)
     {
-//        dd($request->all());
         $campaignId = $request->input('campaign');
         $groupId = $request->input('groups');
         $employees = Employee::where('group_id', $groupId)->get();

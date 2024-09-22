@@ -18,7 +18,6 @@ class LandingController extends Controller
 
     public function store(Request $request)
     {
-//        dd($request->all());
         $email = $request->input('email');
         $url_token = $request->input('url_token');
 

@@ -10,8 +10,6 @@ class HandleEmployeeInput
 {
         public function store(string $data)
         {
-//            dd($data);
-
             // Decode the JSON to an associative array
             $data = json_decode($data, true);
             // Access the 'token'
