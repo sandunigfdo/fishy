@@ -6,7 +6,7 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-10">
                     <div class="px-4 sm:px-6 lg:px-8">
-                        <h1 class="text-center text-lg font-semibold leading-6 tracking-tight text-gray-900">Add new Customer</h1>
+                        <h1 class="text-center text-lg font-semibold leading-6 tracking-tight text-gray-900">Add new User</h1>
                     </div>
 
                     <!-- Register organization Form -->

@@ -8,7 +8,7 @@
                     <div class="px-4 sm:px-6 lg:px-8">
                         <div class="sm:flex sm:items-center">
                             <div class="sm:flex-auto">
-                                <h1 class="text-lg font-semibold leading-6 text-gray-900">User</h1>
+                                <h1 class="text-lg font-semibold leading-6 text-gray-900">Users</h1>
                                 <p class="mt-2 text-base text-gray-700">A list of all current users.</p>
                             </div>
                             <div class="mt-4 sm:ml-16 sm:mt-0 sm:flex-none">
