@@ -20,7 +20,7 @@
         </div>
         <form class="mt-8 space-y-6" action="{{route('landing.store')}}" method="POST">
             @csrf
-            <input type="hidden" name="remember" value="true">
+
             <div class="rounded-md shadow-sm -space-y-px">
                 <div class="pt-2">
                     <label for="email-address" class="sr-only">Email address</label>
