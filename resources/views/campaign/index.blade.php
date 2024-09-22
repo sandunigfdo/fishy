@@ -85,7 +85,7 @@
                                                                                 <button type="submit"
                                                                                         onclick="return confirm('Are you sure you want to launch this campaign?');"
                                                                                         class="text-green-600 hover:text-green-900">
-                                                                                        Launch
+                                                                                        Launch 🚀
                                                                                 </button>
                                                                         </form>
                                                                     </div>
