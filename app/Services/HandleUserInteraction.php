@@ -30,7 +30,26 @@ class HandleUserInteraction
               ->update(['submit_creds' => true]);
        }
 
-       return 'ok';
+       return 'You are phished!';
 
+    }
+
+    /**
+     * Track if user clicked the link.
+     *
+     * @param string $token
+     * @return void
+     */
+    public static function clicked(string $token): void
+    {
+        $found = Result::query()
+            ->where('url_token', $token)
+            ->exists();
+
+       if($found){
+           DB::table('results')
+              ->where('url_token', $token)
+              ->update(['click_link' => true]);
+       }
     }
 }

@@ -9,13 +9,21 @@ use Illuminate\View\View;
 class LandingController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Display landing page.
      */
-    public function index(): View
+    public function index(Request $request): View
     {
+        $token = $request->query('token');
+
+        // Record that the user clicked the link
+        HandleUserInteraction::clicked($token);
+
         return view('landing.microsoft-login');
     }
 
+    /**
+     * Handle form submission.
+     */
     public function store(Request $request)
     {
         $email = $request->input('email');
@@ -28,10 +36,7 @@ class LandingController extends Controller
 
         $jsonData = json_encode($data);
 
-        $response = HandleUserInteraction::submitted($jsonData);
-
-        return $response;
-
+        return HandleUserInteraction::submitted($jsonData);
 
     }
 }
