@@ -92,15 +92,11 @@
 
                                             </tbody>
                                         </table>
-                                        <!-- Campaign Management Table -->
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-
-                    <!-- Register organization Form -->
-
                 </div>
             </div>
         </div>
