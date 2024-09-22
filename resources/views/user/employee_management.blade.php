@@ -225,7 +225,7 @@
                         <div class="sm:flex sm:items-center">
                             <div class="sm:flex-auto">
                                 <h1 class="text-lg font-semibold leading-6 text-gray-900">Groups</h1>
-                                <p class="mt-2 text-base text-gray-700">Add Employees to groups.</p>
+                                <p class="mt-2 text-base text-gray-700">Create groups.</p>
                             </div>
                         </div>
                         <!-- Container -->
@@ -276,21 +276,21 @@
                                             </td>
                                             <td class="relative whitespace-nowrap border-b border-gray-200 py-4 pl-3 pr-4 text-center text-sm font-medium sm:pr-8 lg:pr-8">
                                                 <div class="flex space-x-10">
-                                                    <div><a href="{{ route('employees.edit', $employee) }}"
-                                                            class="text-indigo-600 hover:text-indigo-900">Edit</a>
-                                                    </div>
-                                                    <div>
-                                                        <form method="POST"
-                                                              action="{{ route('employees.destroy', $employee) }}">
-                                                            @csrf
-                                                            @method('delete')
-                                                            <button type="submit"
-                                                                    onclick="return confirm('Are you sure you want to delete this employee?');"
-                                                                    class="text-red-600 hover:text-red-900">
-                                                                Delete
-                                                            </button>
-                                                        </form>
-                                                    </div>
+{{--                                                    <div><a href="{{ route('employees.edit', $employee) }}"--}}
+{{--                                                            class="text-indigo-600 hover:text-indigo-900">Edit</a>--}}
+{{--                                                    </div>--}}
+{{--                                                    <div>--}}
+{{--                                                        <form method="POST"--}}
+{{--                                                              action="{{ route('employees.destroy', $employee) }}">--}}
+{{--                                                            @csrf--}}
+{{--                                                            @method('delete')--}}
+{{--                                                            <button type="submit"--}}
+{{--                                                                    onclick="return confirm('Are you sure you want to delete this employee?');"--}}
+{{--                                                                    class="text-red-600 hover:text-red-900">--}}
+{{--                                                                Delete--}}
+{{--                                                            </button>--}}
+{{--                                                        </form>--}}
+{{--                                                    </div>--}}
                                                 </div>
                                             </td>
                                         </tr>
