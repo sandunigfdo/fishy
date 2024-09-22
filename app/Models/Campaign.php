@@ -10,6 +10,10 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 class Campaign extends Model
 {
     use HasFactory;
+
+    public const inProgress = 'In Progress';
+    public const launched = 'Launched';
+
     protected $fillable = [
         'name',
         'created_date',

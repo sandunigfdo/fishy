@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Campaign;
 use Illuminate\Support\Facades\DB;
 use Illuminate\View\View;
 
@@ -10,7 +11,7 @@ class UserDashboardController extends Controller
     public function index(): View
     {
         // Get ongoing campaigns
-        $ongoing_campaigns = DB::table('campaigns')->where('status', 'In Progress')->get();
+        $ongoing_campaigns = DB::table('campaigns')->where('status', Campaign::inProgress)->get();
         $results_ongoing = [];
         $click_link_count = [];
         $submit_data_count = [];

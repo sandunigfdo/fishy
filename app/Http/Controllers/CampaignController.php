@@ -62,7 +62,7 @@ class CampaignController extends Controller
         $campaign->name = $validated['name'];
         $campaign->created_date = null;
         $campaign->launch_date = null;
-        $campaign->status = 'In Progress';
+        $campaign->status = Campaign::inProgress;
         $campaign->user_id = Auth::user()->id;
         $campaign->save();
 
