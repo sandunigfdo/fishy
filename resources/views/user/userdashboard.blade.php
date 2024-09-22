@@ -38,7 +38,9 @@
 
                                         @foreach($ongoing_campaigns as $campaign)
                                             <div class="flex justify-between">
-                                                <p class="text-base leading-6 text-gray-900">{{$campaign->name}}</p>
+                                                <p class="text-base leading-6 text-gray-900">
+                                                    {{ $campaign->name }}
+                                                </p>
                                                 <div class="mt-4 sm:ml-16 sm:mt-0 sm:flex-none">
                                                     <a href="{{ route('analytics.index', $campaign->id) }}"
                                                        class="block rounded-md bg-indigo-600 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
@@ -63,7 +65,9 @@
                                                             </p>
                                                         </dt>
                                                         <dd class="ml-16 flex items-baseline pb-6 sm:pb-7">
-                                                            <p class="text-2xl font-semibold text-gray-900">{{$click_link_count[$campaign->id]}}</p>
+                                                            <p class="text-2xl font-semibold text-gray-900">
+                                                                {{ $click_link_count[$campaign->id] }}
+                                                            </p>
                                                         </dd>
                                                     </div>
                                                     <div
@@ -82,7 +86,9 @@
                                                             </p>
                                                         </dt>
                                                         <dd class="ml-16 flex items-baseline pb-6 sm:pb-7">
-                                                            <p class="text-2xl font-semibold text-gray-900">{{$submit_data_count[$campaign->id]}}</p>
+                                                            <p class="text-2xl font-semibold text-gray-900">
+                                                                {{ $submit_data_count[$campaign->id] }}
+                                                            </p>
                                                         </dd>
 
                                                     </div>
@@ -102,7 +108,9 @@
                                                             </p>
                                                         </dt>
                                                         <dd class="ml-16 flex items-baseline pb-6 sm:pb-7">
-                                                            <p class="text-2xl font-semibold text-gray-900">4</p>
+                                                            <p class="text-2xl font-semibold text-gray-900">
+                                                                {{ $email_sent_count[$campaign->id] }}
+                                                            </p>
                                                         </dd>
                                                     </div>
                                                 </dl>

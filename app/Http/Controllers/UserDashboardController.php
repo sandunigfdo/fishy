@@ -2,9 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Campaign;
-use App\Models\Employee;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\View\View;
 
@@ -17,6 +14,7 @@ class UserDashboardController extends Controller
         $results_ongoing = [];
         $click_link_count = [];
         $submit_data_count = [];
+        $email_sent_count = [];
 
         foreach ($ongoing_campaigns as $campaign) {
             $campaignId = $campaign->id;
@@ -37,8 +35,14 @@ class UserDashboardController extends Controller
                                         ->where('submit_creds', true)
                                         ->count();
 
+            $email_count[$campaignId] =  DB::table('results')
+                                        ->where('campaign_id', $campaignId)
+                                        ->where('email_sent', true)
+                                        ->count();
+
             $click_link_count[$campaignId] = $link_count[$campaignId];
             $submit_data_count[$campaignId] = $submit_count[$campaignId];
+            $email_sent_count[$campaignId] = $email_count[$campaignId];
         }
 
         return view('user.userdashboard',[
@@ -46,6 +50,7 @@ class UserDashboardController extends Controller
             'results_ongoing' => $results_ongoing,
             'click_link_count' => $click_link_count,
             'submit_data_count' => $submit_data_count,
+            'email_sent_count' => $email_sent_count,
         ]);
 
     }
