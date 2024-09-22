@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Services\HandleEmployeeInput;
+use App\Services\HandleUserInteraction;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 
@@ -28,7 +28,7 @@ class LandingController extends Controller
 
         $jsonData = json_encode($data);
 
-        $handleEmployeeInput = new HandleEmployeeInput;
+        $handleEmployeeInput = new HandleUserInteraction;
 
         $response = $handleEmployeeInput->store($jsonData);
 

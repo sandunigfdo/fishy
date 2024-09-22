@@ -6,7 +6,7 @@ use App\Models\Result;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 
-class HandleEmployeeInput
+class HandleUserInteraction
 {
         public function store(string $data)
         {
