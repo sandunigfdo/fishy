@@ -103,6 +103,8 @@ class CampaignController extends Controller
      */
     public function destroy(Campaign $campaign)
     {
-        //
+        // TODO: Detach relevant related records before deleting a campaign
+        $campaign->delete();
+        return redirect()->route('campaign.index');
     }
 }

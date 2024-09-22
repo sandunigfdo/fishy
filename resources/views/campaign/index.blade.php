@@ -61,7 +61,7 @@
                                                                 <div><a href="{{ route('analytics.index', $campaign) }}" class="text-blue-600 hover:text-blue-900">Results</a></div>
 
                                                                 <div>
-                                                                    <form   method="POST" action="">
+                                                                    <form   method="POST" action="{{ route('campaign.destroy', $campaign) }}">
                                                                         @csrf
                                                                         @method('delete')
                                                                             <button type="submit"

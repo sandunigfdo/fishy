@@ -41,6 +41,7 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/campaign', [CampaignController::class, 'index'])->name('campaign.index');
     Route::post('/campaign', [CampaignController::class, 'store'])->name('campaign.store');
+    Route::delete('/campaign/{campaign}', [CampaignController::class, 'destroy'])->name('campaign.destroy');
 
     Route::get('/employees/by-group', [CampaignController::class, 'getEmployeesByGroup'])->name('employees.byGroup');
 
