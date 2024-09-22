@@ -77,6 +77,9 @@ class GroupController extends Controller
      */
     public function destroy(Group $group)
     {
-        //
+        // TODO:
+        //  - Attached employees should be detached
+        $group->delete();
+        return redirect()->route('employees.index');
     }
 }

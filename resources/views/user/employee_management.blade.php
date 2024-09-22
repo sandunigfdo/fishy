@@ -276,21 +276,21 @@
                                             </td>
                                             <td class="relative whitespace-nowrap border-b border-gray-200 py-4 pl-3 pr-4 text-center text-sm font-medium sm:pr-8 lg:pr-8">
                                                 <div class="flex space-x-10">
-{{--                                                    <div><a href="{{ route('employees.edit', $employee) }}"--}}
+{{--                                                    <div><a href="{{ route('groups.edit', $group) }}"--}}
 {{--                                                            class="text-indigo-600 hover:text-indigo-900">Edit</a>--}}
 {{--                                                    </div>--}}
-{{--                                                    <div>--}}
-{{--                                                        <form method="POST"--}}
-{{--                                                              action="{{ route('employees.destroy', $employee) }}">--}}
-{{--                                                            @csrf--}}
-{{--                                                            @method('delete')--}}
-{{--                                                            <button type="submit"--}}
-{{--                                                                    onclick="return confirm('Are you sure you want to delete this employee?');"--}}
-{{--                                                                    class="text-red-600 hover:text-red-900">--}}
-{{--                                                                Delete--}}
-{{--                                                            </button>--}}
-{{--                                                        </form>--}}
-{{--                                                    </div>--}}
+                                                    <div>
+                                                        <form method="POST"
+                                                              action="{{ route('groups.destroy', $group) }}">
+                                                            @csrf
+                                                            @method('delete')
+                                                            <button type="submit"
+                                                                    onclick="return confirm('Are you sure you want to delete this group?');"
+                                                                    class="text-red-600 hover:text-red-900">
+                                                                Delete
+                                                            </button>
+                                                        </form>
+                                                    </div>
                                                 </div>
                                             </td>
                                         </tr>

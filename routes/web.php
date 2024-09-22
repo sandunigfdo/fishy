@@ -35,6 +35,8 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/groups/create', [GroupController::class, 'create'])->name('groups.create');
     Route::post('/groups', [GroupController::class, 'store'])->name('groups.store');
+    Route::delete('/groups/{group}', [GroupController::class, 'destroy'])->name('groups.destroy');
+
     Route::post('/employees/assign_group', [EmployeeGroupController::class, 'store'])->name('employee_groups.store');
 
     Route::get('/campaign', [CampaignController::class, 'index'])->name('campaign.index');
