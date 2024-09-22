@@ -80,7 +80,7 @@
 
                                                                 @if($campaign->status === \App\Models\Campaign::inProgress)
                                                                     <div>
-                                                                        <form method="POST" action="#">
+                                                                        <form method="POST" action="{{ route('send_email.store') }}">
                                                                             @csrf
                                                                                 <button type="submit"
                                                                                         onclick="return confirm('Are you sure you want to launch this campaign?');"
