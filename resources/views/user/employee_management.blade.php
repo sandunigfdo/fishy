@@ -27,11 +27,7 @@
                                         <tr>
                                             <th scope="col"
                                                 class="sticky top-0 z-10 border-b border-gray-300 bg-white bg-opacity-75 py-3.5 pl-4 pr-3 text-left text-base font-semibold text-gray-900 backdrop-blur backdrop-filter sm:pl-6 lg:pl-8">
-                                                First Name
-                                            </th>
-                                            <th scope="col"
-                                                class="sticky top-0 z-10 border-b border-gray-300 bg-white bg-opacity-75 py-3.5 pl-4 pr-3 text-left text-base font-semibold text-gray-900 backdrop-blur backdrop-filter sm:pl-6 lg:pl-8">
-                                                Last Name
+                                                Name
                                             </th>
                                             <th scope="col"
                                                 class="sticky top-0 z-10 hidden border-b border-gray-300 bg-white bg-opacity-75 px-3 py-3.5 text-left text-base font-semibold text-gray-900 backdrop-blur backdrop-filter lg:table-cell">
@@ -59,10 +55,7 @@
                                         @foreach($employees as $employee)
                                             <tr>
                                                 <td class="whitespace-nowrap border-b border-gray-200 py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6 lg:pl-8">
-                                                    {{$employee->f_name}}
-                                                </td>
-                                                <td class="whitespace-nowrap border-b border-gray-200 py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6 lg:pl-8">
-                                                    {{$employee->l_name}}
+                                                    {{$employee->f_name}} {{$employee->l_name}}
                                                 </td>
                                                 <td class="hidden whitespace-nowrap border-b border-gray-200 px-3 py-4 text-sm text-gray-500 lg:table-cell">
                                                     {{$employee->email}}
