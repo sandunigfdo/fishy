@@ -124,7 +124,7 @@
                             <div class="-mx-4 -my-2 sm:-mx-6 lg:-mx-8">
                                 <div class="inline-block min-w-full py-2 align-middle">
                                     <!-- Multi Select -->
-                                    <div class="bg-white shadow-sm sm:rounded-xl md:col-span-2">
+                                    <div class="bg-white sm:rounded-xl md:col-span-2">
                                         <form method="POST" action="{{ route('employee_groups.store') }}">
                                         @csrf
                                         <div class="px-4 sm:px-6 lg:px-8 py-6">
