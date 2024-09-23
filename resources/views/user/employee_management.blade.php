@@ -248,50 +248,50 @@
                                 <!-- Group Form  -->
                                 <!-- Group Table -->
                                     <div class="grid grid-cols-1 gap-x-8 gap-y-8 md:grid-cols-3 px-4 sm:px-6 lg:px-8 mt-8">
-                                    <table class="min-w-full  col-span-2 border-separate border-spacing-0">
-                                    <thead>
-                                    <tr>
-                                        <th scope="col"
-                                            class="sticky top-0 z-10 border-b border-gray-300 bg-white bg-opacity-75 py-3.5 pl-4 pr-3 text-left text-base font-semibold text-gray-900 backdrop-blur backdrop-filter sm:pl-6 lg:pl-8">
-                                            Group Name
-                                        </th>
-                                        <th scope="col"
-                                            class="sticky top-0 z-10 border-b border-gray-300 bg-white bg-opacity-75 py-3.5 text-left pl-3 pr-4 backdrop-blur backdrop-filter sm:pr-6 lg:pr-8">
-                                            Action
-                                        </th>
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-                                    @foreach($groups as $group)
-                                        <tr>
-                                            <td class="whitespace-nowrap border-b border-gray-200 py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6 lg:pl-8">
-                                                {{$group->name}}
-                                            </td>
-                                            <td class="relative whitespace-nowrap border-b border-gray-200 py-4 pl-3 pr-4 text-center text-sm font-medium sm:pr-8 lg:pr-8">
-                                                <div class="flex space-x-10">
-{{--                                                    <div><a href="{{ route('groups.edit', $group) }}"--}}
-{{--                                                            class="text-indigo-600 hover:text-indigo-900">Edit</a>--}}
-{{--                                                    </div>--}}
-                                                    <div>
-                                                        <form method="POST"
-                                                              action="{{ route('groups.destroy', $group) }}">
-                                                            @csrf
-                                                            @method('delete')
-                                                            <button type="submit"
-                                                                    onclick="return confirm('Are you sure you want to delete this group?');"
-                                                                    class="text-red-600 hover:text-red-900">
-                                                                Delete
-                                                            </button>
-                                                        </form>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                    @endforeach
+                                        <table class="min-w-full  col-span-2 border-separate border-spacing-0">
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col"
+                                                        class="sticky top-0 z-10 border-b border-gray-300 bg-white bg-opacity-75 py-3.5 pl-4 pr-3 text-left text-base font-semibold text-gray-900 backdrop-blur backdrop-filter sm:pl-6 lg:pl-8">
+                                                        Group Name
+                                                    </th>
+                                                    <th scope="col"
+                                                        class="sticky top-0 z-10 border-b border-gray-300 bg-white bg-opacity-75 py-3.5 text-left pl-3 pr-4 backdrop-blur backdrop-filter sm:pr-6 lg:pr-8">
+                                                        Action
+                                                    </th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @foreach($groups as $group)
+                                                    <tr>
+                                                        <td class="whitespace-nowrap border-b border-gray-200 py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6 lg:pl-8">
+                                                            {{$group->name}}
+                                                        </td>
+                                                        <td class="relative whitespace-nowrap border-b border-gray-200 py-4 pl-3 pr-4 text-center text-sm font-medium sm:pr-8 lg:pr-8">
+                                                            <div class="flex space-x-10">
+            {{--                                                    <div><a href="{{ route('groups.edit', $group) }}"--}}
+            {{--                                                            class="text-indigo-600 hover:text-indigo-900">Edit</a>--}}
+            {{--                                                    </div>--}}
+                                                                <div>
+                                                                    <form method="POST"
+                                                                          action="{{ route('groups.destroy', $group) }}">
+                                                                        @csrf
+                                                                        @method('delete')
+                                                                        <button type="submit"
+                                                                                onclick="return confirm('Are you sure you want to delete this group?');"
+                                                                                class="text-red-600 hover:text-red-900">
+                                                                            Delete
+                                                                        </button>
+                                                                    </form>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                @endforeach
 
-                                    </tbody>
-                                </table>
-                                </div>
+                                            </tbody>
+                                        </table>
+                                    </div>
                                 <!-- Group Table -->
                                 </div>
                             </div>
