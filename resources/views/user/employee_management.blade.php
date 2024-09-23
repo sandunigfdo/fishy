@@ -116,7 +116,7 @@
                         <div class="sm:flex sm:items-center">
                             <div class="sm:flex-auto">
                                 <h1 class="text-lg font-semibold leading-6 text-gray-900">Assign Groups</h1>
-                                <p class="mt-2 text-base text-gray-700">Select employees and assign them to groups</p>
+                                <p class="mt-2 text-base text-gray-700">Select employees and assign them to groups.</p>
                             </div>
                         </div>
                         <!-- Container -->
