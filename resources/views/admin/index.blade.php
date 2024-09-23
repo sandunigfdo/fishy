@@ -11,7 +11,7 @@
 
                     <!-- Register organization Form -->
                         <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-                            <form class="space-y-6" action="{{ route('users.store') }}" method="POST">
+                            <form action="{{ route('users.store') }}" method="POST">
                                 @csrf
                                 <!-- Name -->
                                 <div class="space-y-12">
