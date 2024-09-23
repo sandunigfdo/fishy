@@ -176,7 +176,7 @@
                         <h1 class="text-center text-lg font-semibold leading-6 tracking-tight text-gray-900">Assign Employee Groups to a Campaign</h1>
                     </div>
 
-                    <!-- Canary issue Form -->
+                    <!-- Assign Employees to groups Form -->
                     <div class="mt-10 w-full" x-data="employeeSelection()">
 
                         <form method="POST" action="{{ route('results.store') }}">
