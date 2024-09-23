@@ -256,7 +256,7 @@
                             </div>
                         </form>
                     </div>
-                    <!-- Canary Issue Form -->
+                    <!-- Assign Employees to groups Form -->
                 </div>
             </div>
         </div>
