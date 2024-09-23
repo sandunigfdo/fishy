@@ -45,7 +45,7 @@
                                             </div>
                                             <!-- Email -->
                                             <!-- Password -->
-                                            <div class="pb-6">
+                                            <div>
                                                 <div class="flex items-center justify-between">
                                                     <label for="password"
                                                            class="block text-sm font-medium leading-6 text-gray-900">
