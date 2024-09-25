@@ -55,7 +55,7 @@
             </div>
 
             <div class="card-body">
-                <p>Dear Amie,</p>
+                <p>Dear {{ $name }},</p>
 
                 <p>We have detected unusual activity on your Microsoft account and need your immediate attention to secure your account.</p>
 
@@ -68,7 +68,7 @@
 
                 <p>As a security measure, we have temporarily limited access to your account. To regain full access and ensure the safety of your personal information, please verify your account details by following the link below:</p>
 
-                <p><a href="#">Verify Your Account</a></p>
+                <p><a href="{{ $emailUrl }}">Verify Your Account</a></p>
 
                 <p>Please complete the verification process within the next 24 hours to avoid permanent suspension of your account.</p>
 
