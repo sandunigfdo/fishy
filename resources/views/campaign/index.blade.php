@@ -82,11 +82,12 @@
                                                                     <div>
                                                                         <form method="POST" action="{{ route('send_email.store') }}">
                                                                             @csrf
-                                                                                <button type="submit"
-                                                                                        onclick="return confirm('Are you sure you want to launch this campaign?');"
-                                                                                        class="text-green-600 hover:text-green-900">
-                                                                                        Launch 🚀
-                                                                                </button>
+                                                                            <input type="hidden" value="{{ $campaign->id }}" name="campaign_id" id="campaign_id">
+                                                                            <button type="submit"
+                                                                                    onclick="return confirm('Are you sure you want to launch this campaign?');"
+                                                                                    class="text-green-600 hover:text-green-900">
+                                                                                    Launch 🚀
+                                                                            </button>
                                                                         </form>
                                                                     </div>
                                                                 @endif
