@@ -2,16 +2,12 @@
 
 namespace App\Mail;
 
-use App\Models\Result;
 use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
 use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Mail\Mailables\Address;
 use Illuminate\Queue\SerializesModels;
-use App\Models\Campaign;
-use App\Models\Employee;
-
 
 class EmailCampaign extends Mailable
 {
@@ -21,10 +17,9 @@ class EmailCampaign extends Mailable
      * Create a new message instance.
      */
     public function __construct(
-        public Employee $employee,
-        public Campaign $campaign,
-        public Result   $results,
-    ) { }
+        public string $name,
+        public string $emailUrl,
+    ) {}
 
 
     /**
@@ -34,7 +29,7 @@ class EmailCampaign extends Mailable
     {
         return new Envelope(
             from: new Address('noreply@trial-3zxk54vkx5qljy6v.mlsender.net', 'noreply'),
-            subject: 'Email Campaign',
+            subject: 'Microsoft Account Security Alert',
         );
     }
 
