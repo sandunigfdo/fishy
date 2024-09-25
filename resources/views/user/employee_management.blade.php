@@ -107,8 +107,102 @@
         </div>
     </div>
 
+    <!-- Display Groups -->
+    <div class="pb-12">
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+                <div class="p-10">
+                    <div class="px-4 sm:px-6 lg:px-8">
+                        <div class="sm:flex sm:items-center">
+                            <div class="sm:flex-auto">
+                                <h1 class="text-lg font-semibold leading-6 text-gray-900">Groups</h1>
+                                <p class="mt-2 text-base text-gray-700">Create groups.</p>
+                            </div>
+                        </div>
+                        <!-- Container -->
+                        <div class="mt-8 flow-root">
+                            <div class="-mx-4 -my-2 sm:-mx-6 lg:-mx-8">
+                                <div class="inline-block min-w-full py-2 align-middle">
+                                <!-- Group Form  -->
+                                    <form method="POST" action="{{ route('groups.store') }}">
+                                        @csrf
+                                        <div class="sm:flex sm:items-center px-4 sm:px-6 lg:px-8">
+                                            <div class="sm:flex-auto w-64">
+                                                <input type="text"
+                                                       name="name"
+                                                       id="name"
+                                                       placeholder="Create a New Group"
+                                                       autocomplete="name"
+                                                       class="block border-0 focus:ring-2 focus:ring-indigo-600 focus:ring-inset placeholder:text-gray-400 py-1.5 ring-1 ring-gray-300 ring-inset rounded-md shadow-sm sm:leading-6 sm:text-sm text-gray-900 w-full">
+                                            </div>
+                                            <div class="mt-4 sm:ml-16 sm:mt-0 sm:flex-none">
+                                                <button type="submit"
+                                                        class="block rounded-md bg-gray-600 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-gray-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
+                                                    Add Group
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                <!-- Group Form  -->
+                                <!-- Group Table -->
+                                    <div class="grid grid-cols-1 gap-x-8 gap-y-8 md:grid-cols-3 px-4 sm:px-6 lg:px-8 mt-8">
+                                        <table class="min-w-full  col-span-2 border-separate border-spacing-0">
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col"
+                                                        class="sticky top-0 z-10 border-b border-gray-300 bg-white bg-opacity-75 py-3.5 pl-4 pr-3 text-left text-base font-semibold text-gray-900 backdrop-blur backdrop-filter sm:pl-6 lg:pl-8">
+                                                        Group Name
+                                                    </th>
+                                                    <th scope="col"
+                                                        class="sticky top-0 z-10 border-b border-gray-300 bg-white bg-opacity-75 py-3.5 text-left pl-3 pr-4 backdrop-blur backdrop-filter sm:pr-6 lg:pr-8">
+                                                        Action
+                                                    </th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @foreach($groups as $group)
+                                                    <tr>
+                                                        <td class="whitespace-nowrap border-b border-gray-200 py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6 lg:pl-8">
+                                                            {{$group->name}}
+                                                        </td>
+                                                        <td class="relative whitespace-nowrap border-b border-gray-200 py-4 pl-3 pr-4 text-center text-sm font-medium sm:pr-8 lg:pr-8">
+                                                            <div class="flex space-x-10">
+            {{--                                                    <div><a href="{{ route('groups.edit', $group) }}"--}}
+            {{--                                                            class="text-indigo-600 hover:text-indigo-900">Edit</a>--}}
+            {{--                                                    </div>--}}
+                                                                <div>
+                                                                    <form method="POST"
+                                                                          action="{{ route('groups.destroy', $group) }}">
+                                                                        @csrf
+                                                                        @method('delete')
+                                                                        <button type="submit"
+                                                                                onclick="return confirm('Are you sure you want to delete this group?');"
+                                                                                class="text-red-600 hover:text-red-900">
+                                                                            Delete
+                                                                        </button>
+                                                                    </form>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                @endforeach
+
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                <!-- Group Table -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- -->
+
     <!-- Employee Group Management -->
-    <div class="">
+    <div class="pb-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-10">
@@ -208,99 +302,5 @@
             </div>
         </div>
     </div>
-
-    <!-- Display Groups -->
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-10">
-                    <div class="px-4 sm:px-6 lg:px-8">
-                        <div class="sm:flex sm:items-center">
-                            <div class="sm:flex-auto">
-                                <h1 class="text-lg font-semibold leading-6 text-gray-900">Groups</h1>
-                                <p class="mt-2 text-base text-gray-700">Create groups.</p>
-                            </div>
-                        </div>
-                        <!-- Container -->
-                        <div class="mt-8 flow-root">
-                            <div class="-mx-4 -my-2 sm:-mx-6 lg:-mx-8">
-                                <div class="inline-block min-w-full py-2 align-middle">
-                                <!-- Group Form  -->
-                                    <form method="POST" action="{{ route('groups.store') }}">
-                                        @csrf
-                                        <div class="sm:flex sm:items-center px-4 sm:px-6 lg:px-8">
-                                            <div class="sm:flex-auto w-64">
-                                                <input type="text"
-                                                       name="name"
-                                                       id="name"
-                                                       placeholder="Create a New Group"
-                                                       autocomplete="name"
-                                                       class="block border-0 focus:ring-2 focus:ring-indigo-600 focus:ring-inset placeholder:text-gray-400 py-1.5 ring-1 ring-gray-300 ring-inset rounded-md shadow-sm sm:leading-6 sm:text-sm text-gray-900 w-full">
-                                            </div>
-                                            <div class="mt-4 sm:ml-16 sm:mt-0 sm:flex-none">
-                                                <button type="submit"
-                                                        class="block rounded-md bg-gray-600 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-gray-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
-                                                    Add Group
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </form>
-                                <!-- Group Form  -->
-                                <!-- Group Table -->
-                                    <div class="grid grid-cols-1 gap-x-8 gap-y-8 md:grid-cols-3 px-4 sm:px-6 lg:px-8 mt-8">
-                                        <table class="min-w-full  col-span-2 border-separate border-spacing-0">
-                                            <thead>
-                                                <tr>
-                                                    <th scope="col"
-                                                        class="sticky top-0 z-10 border-b border-gray-300 bg-white bg-opacity-75 py-3.5 pl-4 pr-3 text-left text-base font-semibold text-gray-900 backdrop-blur backdrop-filter sm:pl-6 lg:pl-8">
-                                                        Group Name
-                                                    </th>
-                                                    <th scope="col"
-                                                        class="sticky top-0 z-10 border-b border-gray-300 bg-white bg-opacity-75 py-3.5 text-left pl-3 pr-4 backdrop-blur backdrop-filter sm:pr-6 lg:pr-8">
-                                                        Action
-                                                    </th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                @foreach($groups as $group)
-                                                    <tr>
-                                                        <td class="whitespace-nowrap border-b border-gray-200 py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6 lg:pl-8">
-                                                            {{$group->name}}
-                                                        </td>
-                                                        <td class="relative whitespace-nowrap border-b border-gray-200 py-4 pl-3 pr-4 text-center text-sm font-medium sm:pr-8 lg:pr-8">
-                                                            <div class="flex space-x-10">
-            {{--                                                    <div><a href="{{ route('groups.edit', $group) }}"--}}
-            {{--                                                            class="text-indigo-600 hover:text-indigo-900">Edit</a>--}}
-            {{--                                                    </div>--}}
-                                                                <div>
-                                                                    <form method="POST"
-                                                                          action="{{ route('groups.destroy', $group) }}">
-                                                                        @csrf
-                                                                        @method('delete')
-                                                                        <button type="submit"
-                                                                                onclick="return confirm('Are you sure you want to delete this group?');"
-                                                                                class="text-red-600 hover:text-red-900">
-                                                                            Delete
-                                                                        </button>
-                                                                    </form>
-                                                                </div>
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                @endforeach
-
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                <!-- Group Table -->
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- -->
 
 </x-app-layout>
