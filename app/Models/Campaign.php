@@ -22,11 +22,13 @@ class Campaign extends Model
 
     ];
 
-    public function user():BelongsTo{
+    public function user(): BelongsTo
+    {
         return $this->belongsTo(User::class);
     }
 
-    public function results():HasMany{
+    public function results(): HasMany
+    {
         return $this->hasMany(Result::class);
     }
 
