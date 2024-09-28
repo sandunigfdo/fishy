@@ -99,8 +99,14 @@ class CampaignController extends Controller
      */
     public function destroy(Campaign $campaign)
     {
-        // TODO: Detach relevant related records before deleting a campaign
+        // Delete associated results
+        Result::query()
+            ->where('campaign_id', $campaign->id)
+            ->delete();
+
+        // Delete campaign
         $campaign->delete();
+
         return redirect()->route('campaign.index');
     }
 }
