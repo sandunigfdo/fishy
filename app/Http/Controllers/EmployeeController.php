@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Employee;
 use App\Models\Group;
+use App\Models\Result;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Http\RedirectResponse;
@@ -117,9 +118,15 @@ class EmployeeController extends Controller
      */
     public function destroy(Employee $employee): RedirectResponse
     {
-        // TODO: Detach relevant related records ("result" record)
         Gate::authorize('delete',$employee);
+
+        // Delete associated results
+        Result::query()
+            ->where('employee_id', $employee->id)
+            ->delete();
+
         $employee->delete();
+
         return redirect()->route('employees.index');
     }
 }
