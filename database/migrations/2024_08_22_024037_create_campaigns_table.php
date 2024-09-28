@@ -17,7 +17,7 @@ return new class extends Migration
             $table->date('created_date')->nullable();
             $table->date('launch_date')->nullable();
             $table->string('status')->nullable();
-            $table->foreignId('user_id')->constrained()->cascadeOnDelete();
+            $table->foreignId('user_id');
             $table->timestamps();
         });
     }

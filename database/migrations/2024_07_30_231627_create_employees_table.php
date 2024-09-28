@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('l_name');
             $table->string('position');
             $table->string('department');
-            $table->foreignId('user_id')->constrained()->cascadeOnDelete();
+            $table->foreignId('user_id');
             $table->timestamps();
         });
     }

@@ -18,8 +18,8 @@ return new class extends Migration
             $table->string('url_token');
             $table->string('canary_url');
             $table->string('canary_id');
-            $table->foreignId('campaign_id')->constrained()->cascadeOnDelete();
-            $table->foreignId('employee_id')->constrained()->cascadeOnDelete();
+            $table->foreignId('campaign_id');
+            $table->foreignId('employee_id');
             $table->timestamps();
         });
     }
