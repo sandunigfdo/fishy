@@ -71,7 +71,7 @@
                                                                         @csrf
                                                                         @method('delete')
                                                                             <button type="submit"
-                                                                                    onclick="return confirm('Are you sure you want to delete this campaign?');"
+                                                                                    onclick="return confirm('Are you sure you want to delete this campaign? Related results will also be removed and can not be recovered after this action.');"
                                                                                     class="text-red-600 hover:text-red-900">
                                                                                     Delete
                                                                             </button>
