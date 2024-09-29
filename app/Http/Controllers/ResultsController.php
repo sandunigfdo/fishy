@@ -35,7 +35,12 @@ class ResultsController extends Controller
         $groupId = $request->input('groups');
         $employees = Employee::where('group_id', $groupId)->get();
 
-        $base_url = 'http://localhost:9090/landing?token=';
+        if (config('app.env') === 'local') {
+            $base_url = 'http://localhost:9090/landing?token=';
+        } else {
+            $base_url = 'https://fishy.ncsg.co.nz/landing?token=';
+        }
+
 
         foreach ($employees as $employee) {
             $url_token = $this->generateToken($campaignId, $employee->id);
