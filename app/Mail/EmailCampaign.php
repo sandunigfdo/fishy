@@ -28,8 +28,8 @@ class EmailCampaign extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            from: new Address('noreply@trial-3zxk54vkx5qljy6v.mlsender.net', 'noreply'),
-            subject: 'Microsoft Account Security Alert',
+            from: new Address(config('mail.from.address'), 'noreply'),
+            subject: 'Test Alert',
         );
     }
 
@@ -39,7 +39,7 @@ class EmailCampaign extends Mailable
     public function content(): Content
     {
         return new Content(
-            view: 'email.template',
+            view: 'email.plain-template',
         );
     }
 
