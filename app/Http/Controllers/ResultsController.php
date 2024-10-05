@@ -55,7 +55,7 @@ class ResultsController extends Controller
                'canary_id' => null,
             ]);
         }
-        return redirect()->route('campaign.index');
+        return redirect()->route('campaign.index')->with('status', 'group-added-to-campaign');
 
     }
 

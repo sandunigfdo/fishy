@@ -42,7 +42,7 @@ class SendEmailsController extends Controller
             }
         }
 
-        return back()->with('success', 'Email sent successfully!');
+        return back()->with('status', 'campaign-launched');
 
 
 

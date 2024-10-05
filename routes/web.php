@@ -26,7 +26,7 @@ Route::middleware('auth')->group(function () {
     // Home page - campaign summary
     Route::get('/', [UserDashboardController::class, 'index'])->name('dashboard');
 
-    Route::resource('employees', EmployeeController::class)->only(['index', 'create', 'store', 'edit', 'update', 'destroy']);
+    Route::resource('/employees', EmployeeController::class)->only(['index', 'create', 'store', 'edit', 'update', 'destroy']);
 
     Route::get('/groups/create', [GroupController::class, 'create'])->name('groups.create');
     Route::post('/groups', [GroupController::class, 'store'])->name('groups.store');

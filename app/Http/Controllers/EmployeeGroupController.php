@@ -17,6 +17,6 @@ class EmployeeGroupController extends Controller
             $employee->save();
         }
 
-        return redirect()->route('employees.index')->with('success', 'Group created!');
+        return redirect()->route('employees.index')->with('status', 'employee-added-to-group');
     }
 }
