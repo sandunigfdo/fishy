@@ -45,7 +45,7 @@ class GroupController extends Controller
         $group->user_id = Auth::user()->id;
         $group->save();
 
-        return redirect()->route('employees.index')->with('success', 'Group created!');
+        return redirect()->route('employees.index')->with('status', 'group-added');
     }
 
     /**
@@ -78,6 +78,6 @@ class GroupController extends Controller
     public function destroy(Group $group)
     {
         $group->delete();
-        return redirect()->route('employees.index');
+        return redirect()->route('employees.index')->with('status', 'group-deleted');
     }
 }

@@ -267,6 +267,15 @@
         </div>
     </div>
 
+    @if(session('status') === 'campaign-created')
+        <x-simple-notification message="Campaign created successfully!" />
+    @elseif(session('status') === 'group-added-to-campaign')
+        <x-simple-notification message="Group added to campaign successfully!" />
+    @elseif(session('status') === 'campaign-deleted')
+        <x-simple-notification message="Campaign deleted successfully!" />
+    @elseif(session('status') === 'campaign-launched')
+        <x-simple-notification message="🚀 Campaign launched successfully!" />
+    @endif
 
 
     <!-- Alpine.js Logic -->

@@ -58,7 +58,7 @@ class EmployeeController extends Controller
         $employee->url_token = $this->generateToken();
         $employee->save();
 
-        return redirect()->route('employees.index');
+        return redirect()->route('employees.index')->with('status', 'employee-added');
 
     }
 
@@ -109,7 +109,7 @@ class EmployeeController extends Controller
         ]);
 
         $employee->update($validated);
-        return redirect()->route('employees.index');
+        return redirect()->route('employees.index')->with('status', 'employee-updated');
 
     }
 
@@ -127,6 +127,6 @@ class EmployeeController extends Controller
 
         $employee->delete();
 
-        return redirect()->route('employees.index');
+        return redirect()->route('employees.index')->with('status', 'employee-deleted');
     }
 }

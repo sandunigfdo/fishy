@@ -303,4 +303,18 @@
         </div>
     </div>
 
+    @if(session('status') === 'employee-added')
+        <x-simple-notification message="Employee added successfully!" />
+    @elseif(session('status') === 'employee-updated')
+        <x-simple-notification message="Employee updated successfully!" />
+    @elseif(session('status') === 'employee-deleted')
+        <x-simple-notification message="Employee deleted successfully!" />
+    @elseif(session('status') === 'group-added')
+        <x-simple-notification message="Group added successfully!" />
+    @elseif(session('status') === 'group-deleted')
+        <x-simple-notification message="Group deleted successfully!" />
+    @elseif(session('status') === 'employee-added-to-group')
+        <x-simple-notification message="Employee added to the group successfully!" />
+    @endif
+
 </x-app-layout>

@@ -66,7 +66,7 @@ class CampaignController extends Controller
         $campaign->user_id = Auth::user()->id;
         $campaign->save();
 
-        return redirect()->route('campaign.index');
+        return redirect()->route('campaign.index')->with('status', 'campaign-created');
 
     }
 
@@ -107,6 +107,6 @@ class CampaignController extends Controller
         // Delete campaign
         $campaign->delete();
 
-        return redirect()->route('campaign.index');
+        return redirect()->route('campaign.index')->with('status', 'campaign-deleted');
     }
 }
