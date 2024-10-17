@@ -37,3 +37,7 @@ Follow these steps to set up and run the application in your environment:
 6. **Build Front-End Assets**
     `./vendor/bin/sail npm run dev`
 
+## Default User Account Credentials
+Email - sandunigfdo@gmail.com
+PAssword - password
+
